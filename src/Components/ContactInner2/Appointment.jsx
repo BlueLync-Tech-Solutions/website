@@ -19,11 +19,9 @@ const Appointment = () => {
 
   useEffect(() => {
     if (jobTitle) {
-      setMessage(
-        `I would like to apply for the ${jobTitle} position.\n\n${jobDescription}`
-      );
+      setMessage(`I would like to apply for the ${jobTitle} position.`);
     }
-  }, [jobTitle, jobDescription]);
+  }, [jobTitle]);
 
   // Arriving from an "Apply" button: land on the form instead of the page top.
   useEffect(() => {
@@ -456,12 +454,6 @@ return (
                       )}
 
                     </div>
-                  )}
-
-                  {jobDescription && (
-                    <p className="mt-4 font-Nunito text-sm leading-6 text-slate-400">
-                      {jobDescription}
-                    </p>
                   )}
 
                 </div>
