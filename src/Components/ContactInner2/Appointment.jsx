@@ -456,6 +456,12 @@ return (
                     </div>
                   )}
 
+                  {jobDescription && (
+                    <p className="mt-4 font-Nunito text-sm leading-6 text-slate-400">
+                      {jobDescription}
+                    </p>
+                  )}
+
                 </div>
               )}
 
