@@ -1,6 +1,41 @@
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { scrollToTarget } from '../../Shared/Lenis/lenis';
 import titleShape from '/images/sub-title-shape.png';
 
 const Appointment = () => {
+  // Job details passed from the "Apply" buttons on the Careers page.
+  const { state } = useLocation();
+
+  const jobTitle = state?.jobTitle || '';
+  const jobDescription = state?.jobDescription || '';
+  const jobExperience = state?.jobExperience || '';
+  const jobLocation = state?.jobLocation || '';
+  const jobType = state?.jobType || '';
+
+  const [message, setMessage] = useState('');
+
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (jobTitle) {
+      setMessage(`I would like to apply for the ${jobTitle} position.`);
+    }
+  }, [jobTitle]);
+
+  // Arriving from an "Apply" button: land on the form instead of the page top.
+  useEffect(() => {
+    if (!jobTitle) return;
+
+    const timer = setTimeout(() => {
+      if (formRef.current) {
+        scrollToTarget(formRef.current);
+      }
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [jobTitle]);
+
    const handleSubmit = (e) => {
     e.preventDefault(); // prevents page reload
     alert(`We are Working on it`);
@@ -305,7 +340,10 @@ return (
             CONTACT FORM
         ====================================================== */}
 
-        <div className="relative">
+        <div
+          className="relative scroll-mt-24"
+          ref={formRef}
+        >
 
           <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.045] p-7 shadow-[0_25px_80px_rgba(0,0,0,0.25)] backdrop-blur-xl md:p-9">
 
@@ -375,12 +413,82 @@ return (
 
               </div>
 
+              {/* SELECTED JOB */}
+
+              {jobTitle && (
+                <div className="mb-8 overflow-hidden rounded-2xl border border-[#38BDF8]/20 bg-[#38BDF8]/5 p-5 backdrop-blur-xl">
+
+                  <div className="mb-3 flex items-center gap-2">
+
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-[#38BDF8] shadow-[0_0_12px_#38BDF8]" />
+
+                    <span className="font-Rajdhani text-[10px] font-bold uppercase tracking-[0.25em] text-[#7DD3FC]">
+                      Applying For
+                    </span>
+
+                  </div>
+
+                  <h3 className="font-Rajdhani text-[24px] font-bold leading-tight text-white">
+                    {jobTitle}
+                  </h3>
+
+                  {(jobType || jobLocation || jobExperience) && (
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+
+                      {jobType && (
+                        <span className="rounded-full bg-[#0D47A1] px-3 py-1 font-Rajdhani text-[10px] font-semibold uppercase tracking-wider text-white">
+                          {jobType}
+                        </span>
+                      )}
+
+                      {jobLocation && (
+                        <span className="rounded-full border border-white/10 px-3 py-1 font-Rajdhani text-[10px] font-semibold uppercase tracking-wider text-slate-300">
+                          {jobLocation}
+                        </span>
+                      )}
+
+                      {jobExperience && (
+                        <span className="rounded-full border border-white/10 px-3 py-1 font-Rajdhani text-[10px] font-semibold uppercase tracking-wider text-slate-300">
+                          {jobExperience}
+                        </span>
+                      )}
+
+                    </div>
+                  )}
+
+                  {jobDescription && (
+                    <p className="mt-4 font-Nunito text-sm leading-6 text-slate-400">
+                      {jobDescription}
+                    </p>
+                  )}
+
+                </div>
+              )}
+
               {/* FORM */}
 
               <form
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-5"
               >
+
+                {/* SUBMITTED WITH THE FORM */}
+
+                {jobTitle && (
+                  <>
+                    <input
+                      type="hidden"
+                      name="jobTitle"
+                      value={jobTitle}
+                    />
+
+                    <input
+                      type="hidden"
+                      name="jobDescription"
+                      value={jobDescription}
+                    />
+                  </>
+                )}
 
                 {/* NAME / NUMBER */}
 
@@ -450,6 +558,8 @@ return (
                   name="message"
                   id="message"
                   placeholder="Write A Message..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="h-[145px] w-full resize-none rounded-xl border border-white/10 bg-[#071A30]/70 px-5 py-4 font-Nunito text-white outline-none transition-all duration-300 placeholder:text-slate-500 focus:border-[#38BDF8]/50 focus:bg-[#071A30] focus:ring-4 focus:ring-[#38BDF8]/5"
                 />
 

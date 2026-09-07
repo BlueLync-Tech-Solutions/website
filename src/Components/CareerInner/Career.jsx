@@ -765,7 +765,16 @@ const Career = () => {
                   <div className="lg:col-span-1 lg:flex lg:justify-end">
 
                     <Link
-                      to="/contact2"
+                      to="/Contact-US"
+                      state={{
+                        jobTitle: job.title,
+                        jobDescription: job.description,
+                        jobExperience: job.experience,
+                        jobLocation: job.location,
+                        jobType: job.type,
+                        // Contact page scrolls to the form itself.
+                        skipScrollTop: true,
+                      }}
                       className="group/apply inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0D47A1] px-5 py-3 font-Rajdhani text-sm font-bold text-white transition-all duration-300 hover:bg-[#1976D2] lg:w-auto"
                     >
 
@@ -880,7 +889,7 @@ const Career = () => {
               </p>
 
               <Link
-                to="/contact2"
+                to="/Contact-US"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-Rajdhani text-sm font-bold text-[#0D47A1] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
                 Apply Now
