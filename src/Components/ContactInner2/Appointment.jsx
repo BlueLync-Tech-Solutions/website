@@ -26,8 +26,6 @@ const Appointment = () => {
   }, [jobTitle, jobDescription]);
 
   // Arriving from an "Apply" button: land on the form instead of the page top.
-  // Main skips its scroll-to-top for this navigation (`skipScrollTop`); the
-  // short delay just lets the page finish laying out before measuring.
   useEffect(() => {
     if (!jobTitle) return;
 
@@ -417,7 +415,7 @@ return (
 
               </div>
 
-              {/* ================= SELECTED JOB ================= */}
+              {/* SELECTED JOB */}
 
               {jobTitle && (
                 <div className="mb-8 overflow-hidden rounded-2xl border border-[#38BDF8]/20 bg-[#38BDF8]/5 p-5 backdrop-blur-xl">
@@ -476,7 +474,7 @@ return (
                 className="flex flex-col gap-5"
               >
 
-                {/* SELECTED JOB (submitted with the form) */}
+                {/* SUBMITTED WITH THE FORM */}
 
                 {jobTitle && (
                   <>

@@ -17,8 +17,7 @@ const Main = () => {
 
   const lenisRef = useRef(null);
 
-  // Lenis is created once and shared, so components can scroll programmatically
-  // (see Shared/Lenis/lenis.js) instead of fighting it with window.scrollTo.
+  // Created once and shared so other components can scroll through it.
   useEffect(() => {
     const lenis = new Lenis();
 
@@ -43,8 +42,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    // A page can opt out when it scrolls somewhere else itself — the Contact
-    // page does this when it is opened from a Careers "Apply" button.
+    // Pages that scroll somewhere else themselves opt out.
     if (location.state?.skipScrollTop) return;
 
     if (lenisRef.current) {
