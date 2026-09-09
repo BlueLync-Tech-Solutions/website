@@ -105,7 +105,7 @@ const About = () => {
 
             {/* CTA */}
             <div className="flex items-center gap-10">
-              <Link to="/about3">
+              <Link to="/About-Us">
                 <motion.button
                   className="px-6 py-3 bg-[#1565C0] text-white font-semibold rounded-full shadow-md hover:bg-[#0D47A1] transition-all flex items-center gap-2"
                   whileHover={{ scale: 1.05, x: 5 }}
