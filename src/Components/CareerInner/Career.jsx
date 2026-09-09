@@ -458,7 +458,8 @@ const Career = () => {
 
             </h1>
 
-            <p className="mt-6 max-w-[700px] font-Nunito text-[16px] leading-7 text-[#0D47A1]/75 md:text-[18px]">
+            {/* /90 keeps this above the 4.5:1 AA line across the whole gradient */}
+            <p className="mt-6 max-w-[700px] font-Nunito text-[16px] leading-7 text-[#0D47A1]/90 md:text-[18px]">
               Join a team of technology professionals building intelligent
               software, scalable platforms and next-generation digital
               solutions.
@@ -708,7 +709,7 @@ const Career = () => {
                             {job.type}
                           </span>
 
-                          <span className="flex items-center gap-1 font-Rajdhani text-[11px] font-semibold text-[#0D47A1]/60">
+                          <span className="flex items-center gap-1 font-Rajdhani text-[12px] font-semibold text-[#0D47A1]/90">
 
                             <HiOutlineMapPin />
 
@@ -734,7 +735,7 @@ const Career = () => {
 
                   <div className="lg:col-span-5">
 
-                    <p className="font-Nunito text-[14px] leading-6 text-[#0D47A1]/65">
+                    <p className="font-Nunito text-[14px] leading-6 text-[#0D47A1]/90">
                       {job.description}
                     </p>
 
@@ -748,7 +749,7 @@ const Career = () => {
 
                     <div className="rounded-xl border border-[#0D47A1]/5 bg-white/60 p-3">
 
-                      <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/40">
+                      <p className="font-Rajdhani text-[11px] font-bold uppercase tracking-wider text-[#0D47A1]/90">
                         Experience
                       </p>
 
@@ -760,7 +761,7 @@ const Career = () => {
 
                     <div className="rounded-xl border border-[#0D47A1]/5 bg-white/60 p-3">
 
-                      <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/40">
+                      <p className="font-Rajdhani text-[11px] font-bold uppercase tracking-wider text-[#0D47A1]/90">
                         Openings
                       </p>
 
