@@ -8,7 +8,7 @@ const BreadCrumb2 = ({
   breadCrumbLink,
 }) => {
   return (
-    <div className="bg-[url('/images/breatcumbs.png')] bg-no-repeat bg-cover bg-center flex items-center justify-start h-[200px] sm:h-[300px] pt-[70px] lg:pt-[86px]">
+    <div className="bg-[url('/images/breatcumbs.png')] bg-no-repeat bg-cover bg-center flex items-center justify-center h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px]">
       <div className='Container'>
         <div className='text-center'>
           <h1 className='font-Rajdhani font-bold text-4xl sm:text-[44px] md:text-[55px] text-[#0D47A1] capitalize'>

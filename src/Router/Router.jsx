@@ -7,6 +7,7 @@ import ServiceInner from '../Components/ServiceInner/ServiceInner';
 import CareerInner from '../Components/CareerInner/CareerInner';
 import ContactInner2 from '../Components/ContactInner2/ContactInner2';
 import GenAI from '../Components/GenAI/GenAI';
+import TechnologyIntro from '../Components/TechnologyIntro/TechnologyIntro';
 import DigitalMarketing from '../Components/DigitalMarketing/DigitalMarketing';
 import AWSService from '../Components/AWSService/AWSService';
 import MicrosoftServicesConsulting from '../Components/MicrosoftServicesConsulting/MicrosoftServicesConsulting';
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/genAI',
         element: <GenAI />,
+      },
+      {
+        path: '/technologyIntro',
+        element: <TechnologyIntro />,
       },
       {
         path: '/digitalMarketing',
