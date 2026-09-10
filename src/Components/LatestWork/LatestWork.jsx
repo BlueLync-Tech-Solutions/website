@@ -162,8 +162,8 @@
 
 // export default LatestWork;
 
-
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import {
@@ -173,10 +173,7 @@ import {
   FaMicrosoft,
 } from "react-icons/fa6";
 
-import {
-  HiOutlineSparkles,
-  HiOutlineCpuChip,
-} from "react-icons/hi2";
+import { HiOutlineSparkles, HiOutlineCpuChip } from "react-icons/hi2";
 
 import "swiper/css";
 
@@ -375,39 +372,28 @@ const LatestWork = () => {
       ======================================================= */}
 
       <div className="pointer-events-none absolute right-[12%] top-[15%] hidden lg:block">
-
         <div className="relative h-32 w-32">
-
           <div className="absolute inset-0 animate-ping rounded-full border border-[#0D47A1]/10" />
 
           <div className="absolute inset-4 rounded-full border border-dashed border-[#0D47A1]/20" />
 
           <div className="absolute inset-8 flex items-center justify-center rounded-full bg-[#0D47A1]/10 backdrop-blur-md">
-
             <HiOutlineCpuChip className="text-2xl text-[#0D47A1]" />
-
           </div>
-
         </div>
-
       </div>
 
       <div className="Container relative z-10">
-
         {/* ====================================================
             HEADER
         ===================================================== */}
 
         <div className="mx-auto max-w-[1000px] text-center">
-
           {/* AI BADGE */}
 
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#0D47A1]/10 bg-white/40 px-5 py-2.5 shadow-sm backdrop-blur-xl">
-
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0D47A1] text-white">
-
               <FaMicrosoft className="text-xs" />
-
             </span>
 
             <span className="font-Rajdhani text-[10px] font-bold uppercase tracking-[0.28em] text-[#0D47A1]">
@@ -415,13 +401,11 @@ const LatestWork = () => {
             </span>
 
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
-
           </div>
 
           {/* SMALL TITLE */}
 
           <div className="mb-4 flex items-center justify-center gap-3">
-
             <img
               src={titleShape}
               draggable={false}
@@ -439,31 +423,24 @@ const LatestWork = () => {
               alt="Shape"
               className="h-auto w-auto"
             />
-
           </div>
 
           {/* MAIN TITLE */}
 
           <h1 className="font-Rajdhani text-[38px] font-bold leading-[1.05] text-[#082B55] sm:text-[46px] md:text-[56px]">
-
             Intelligent tools.
-
             <span className="block bg-gradient-to-r from-[#0D47A1] via-[#1565C0] to-[#00695C] bg-clip-text text-transparent">
               Infinite possibilities.
             </span>
-
           </h1>
 
           {/* DESCRIPTION */}
 
           <p className="mx-auto mt-5 max-w-[760px] font-Nunito text-[15px] leading-7 text-[#0D47A1]/70 md:text-[17px]">
-
-            Explore the Microsoft technologies powering modern businesses —
-            from productivity and cloud computing to analytics, automation,
-            security and AI.
-
+            Explore the Microsoft technologies powering modern businesses — from
+            productivity and cloud computing to analytics, automation, security
+            and AI.
           </p>
-
         </div>
 
         {/* ====================================================
@@ -471,29 +448,23 @@ const LatestWork = () => {
         ===================================================== */}
 
         <div className="mx-auto mt-10 flex max-w-[900px] flex-wrap items-center justify-center gap-3">
-
           {[
             "AI Powered",
             "Cloud Connected",
             "Enterprise Ready",
             "Microsoft Ecosystem",
           ].map((item) => (
-
             <div
               key={item}
               className="flex items-center gap-2 rounded-full border border-white/70 bg-white/35 px-4 py-2 backdrop-blur-md"
             >
-
               <span className="h-1.5 w-1.5 rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]" />
 
               <span className="font-Rajdhani text-[9px] font-bold uppercase tracking-[0.15em] text-[#0D47A1]/70">
                 {item}
               </span>
-
             </div>
-
           ))}
-
         </div>
 
         {/* ====================================================
@@ -501,47 +472,35 @@ const LatestWork = () => {
         ===================================================== */}
 
         <div className="relative mt-14">
-
           {/* TOP LABEL */}
 
           <div className="mb-6 flex items-center justify-between">
-
             <div className="flex items-center gap-3">
-
               <HiOutlineSparkles className="text-[#0D47A1]" />
 
               <span className="font-Rajdhani text-[11px] font-bold uppercase tracking-[0.22em] text-[#0D47A1]">
                 Intelligent Technology Stack
               </span>
-
             </div>
 
             <div className="hidden items-center gap-2 md:flex">
-
               <span className="font-Rajdhani text-[10px] font-bold uppercase tracking-widest text-[#0D47A1]/50">
                 Explore Platform
               </span>
 
               <FaArrowRight className="text-xs text-[#0D47A1]/50" />
-
             </div>
-
           </div>
 
           {/* SWIPER */}
 
           <Swiper {...settings}>
-
             {latestWorkCard.map((item, index) => {
-
               const isActive = activeIndex === index;
 
               return (
-
                 <SwiperSlide key={item.id}>
-
                   <div className="py-5">
-
                     <div
                       className={`group relative overflow-hidden rounded-[28px] border transition-all duration-700 ${
                         isActive
@@ -549,13 +508,11 @@ const LatestWork = () => {
                           : "border-white/60 bg-white/55 shadow-[0_10px_35px_rgba(13,71,161,0.08)]"
                       }`}
                     >
-
                       {/* =================================================
                           IMAGE AREA
                       ================================================== */}
 
                       <div className="relative h-[240px] overflow-hidden bg-gradient-to-br from-white via-[#fff9f2] to-[#ffe9d1]">
-
                         {/* GRID */}
 
                         <div
@@ -595,35 +552,28 @@ const LatestWork = () => {
                         {/* NUMBER */}
 
                         <div className="absolute left-5 top-5 z-20">
-
                           <span className="font-Rajdhani text-[11px] font-bold tracking-[0.2em] text-[#0D47A1]/40">
                             0{item.id}
                           </span>
-
                         </div>
 
                         {/* MICROSOFT BADGE */}
 
                         <div className="absolute right-5 top-5 z-20 flex items-center gap-2 rounded-full border border-white/80 bg-white/80 px-3 py-1.5 shadow-sm backdrop-blur-md">
-
                           <FaMicrosoft className="text-[9px] text-[#0D47A1]" />
 
                           <span className="font-Rajdhani text-[8px] font-bold uppercase tracking-wider text-[#0D47A1]">
                             Microsoft
                           </span>
-
                         </div>
 
                         {/* CATEGORY */}
 
                         <div className="absolute bottom-4 left-5 z-20">
-
                           <span className="rounded-full border border-[#0D47A1]/10 bg-white/85 px-3 py-1.5 font-Rajdhani text-[9px] font-bold uppercase tracking-[0.16em] text-[#0D47A1] shadow-sm backdrop-blur-md">
                             {item.category}
                           </span>
-
                         </div>
-
                       </div>
 
                       {/* =================================================
@@ -631,21 +581,16 @@ const LatestWork = () => {
                       ================================================== */}
 
                       <div className="p-6">
-
                         {/* AI LABEL */}
 
                         <div className="mb-3 flex items-center gap-2">
-
                           <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#0D47A1]/5 text-[#0D47A1]">
-
                             <HiOutlineSparkles />
-
                           </span>
 
                           <span className="font-Rajdhani text-[9px] font-bold uppercase tracking-[0.15em] text-[#0D47A1]/60">
                             {item.aiText}
                           </span>
-
                         </div>
 
                         {/* TITLE */}
@@ -663,35 +608,27 @@ const LatestWork = () => {
                         {/* BOTTOM */}
 
                         <div className="mt-5 flex items-center justify-between border-t border-[#0D47A1]/10 pt-4">
-
                           {/* STATUS */}
 
                           <div className="flex items-center gap-2">
-
                             <span className="relative flex h-2 w-2">
-
                               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
 
                               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-
                             </span>
 
                             <span className="font-Rajdhani text-[9px] font-bold uppercase tracking-[0.15em] text-[#0D47A1]/50">
                               AI Ready
                             </span>
-
                           </div>
 
                           {/* ARROW */}
-
-                          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0D47A1]/5 text-[#0D47A1] transition-all duration-300 group-hover:bg-[#0D47A1] group-hover:text-white">
-
-                            <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
-
-                          </div>
-
+                          <NavLink to={"/Microsoft-Service"}>
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0D47A1]/5 text-[#0D47A1] transition-all duration-300 group-hover:bg-[#0D47A1] group-hover:text-white">
+                              <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
+                            </div>
+                          </NavLink>
                         </div>
-
                       </div>
 
                       {/* ACTIVE LINE */}
@@ -701,18 +638,12 @@ const LatestWork = () => {
                           isActive ? "w-full" : "w-0"
                         }`}
                       />
-
                     </div>
-
                   </div>
-
                 </SwiperSlide>
-
               );
             })}
-
           </Swiper>
-
         </div>
 
         {/* ====================================================
@@ -720,26 +651,22 @@ const LatestWork = () => {
         ===================================================== */}
 
         <div className="mx-auto mt-8 flex max-w-[800px] items-center gap-4">
-
           <span className="font-Rajdhani text-[10px] font-bold text-[#0D47A1]/50">
             0{activeIndex + 1}
           </span>
 
           <div className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-[#0D47A1]/10">
-
             <div
               className="h-full rounded-full bg-gradient-to-r from-[#0D47A1] to-[#38BDF8] transition-all duration-500"
               style={{
                 width: `${((activeIndex + 1) / latestWorkCard.length) * 100}%`,
               }}
             />
-
           </div>
 
           <span className="font-Rajdhani text-[10px] font-bold text-[#0D47A1]/50">
             09
           </span>
-
         </div>
 
         {/* ====================================================
@@ -747,29 +674,20 @@ const LatestWork = () => {
         ===================================================== */}
 
         <div className="mx-auto mt-12 max-w-[1050px]">
-
           <div className="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/35 p-6 shadow-[0_15px_50px_rgba(13,71,161,0.08)] backdrop-blur-xl md:p-8">
-
             {/* MOVING LINE */}
 
             <div className="absolute left-0 top-0 h-[2px] w-full overflow-hidden">
-
               <div className="h-full w-1/3 animate-[slide_4s_linear_infinite] bg-gradient-to-r from-transparent via-[#0D47A1] to-transparent" />
-
             </div>
 
             <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-
               <div className="flex items-center gap-4">
-
                 <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-[#0D47A1] text-white shadow-lg">
-
                   <HiOutlineCpuChip className="text-2xl" />
-
                 </div>
 
                 <div>
-
                   <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-[0.25em] text-[#0D47A1]/50">
                     Microsoft Digital Stack
                   </p>
@@ -777,37 +695,22 @@ const LatestWork = () => {
                   <h3 className="font-Rajdhani text-[23px] font-bold text-[#0D47A1]">
                     One ecosystem. Every business need.
                   </h3>
-
                 </div>
-
               </div>
 
               <div className="flex flex-wrap justify-center gap-2">
-
-                {[
-                  "Cloud",
-                  "AI",
-                  "Analytics",
-                  "Automation",
-                ].map((item) => (
-
+                {["Cloud", "AI", "Analytics", "Automation"].map((item) => (
                   <span
                     key={item}
                     className="rounded-full border border-[#0D47A1]/10 bg-white/50 px-4 py-2 font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/60"
                   >
                     ✓ {item}
                   </span>
-
                 ))}
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
 
       {/* ======================================================
@@ -827,7 +730,6 @@ const LatestWork = () => {
         }
 
       `}</style>
-
     </section>
   );
 };
