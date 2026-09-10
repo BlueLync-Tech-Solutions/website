@@ -2,10 +2,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "/images/white-main-logo.png";
 import Logo3 from "/images/white-main-logo.png";
 import { useEffect, useState } from "react";
-import {
-  FaChevronDown,
-  FaEnvelope,
-} from "react-icons/fa6";
+import { FaChevronDown, FaEnvelope } from "react-icons/fa6";
 import { FaPhoneAlt, FaTimes } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 
@@ -181,7 +178,7 @@ export default function Navbar() {
        {/* <header className="header-area header-sticky bg-gradient-to-r from-green-500 via-green-600 to-green-700 shadow-md py-1 lg:py-2 transition-all duration-300 text-white fixed w-full top-0 left-0 z-50"> */}
     {/* <header className="header-area header-sticky bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#2563EB] shadow-md py-1 lg:py-2 transition-all duration-300 text-white fixed w-full top-0 left-0 z-50"> */}
 
-       <div className="px-4 sm:px-6 md:px-8 lg:px-4 xl:px-8 2xl:px-10">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-4 xl:px-8 2xl:px-10">
           <div className="flex items-center justify-between lg:grid lg:grid-cols-12">
             {/* Logo */}
             <div className="col-span-2 flex items-center">
@@ -248,7 +245,7 @@ export default function Navbar() {
                             ))}
                           </ul>
                         </li>
-                      )
+                      ),
                     )}
                   </ul>
                 </nav>
