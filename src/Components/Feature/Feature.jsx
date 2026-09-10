@@ -343,28 +343,28 @@
 
 // export default Feature;
 
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { NavLink } from "react-router-dom";
 import {
-  FaArrowRight,
+  FaArrowUp,
+  FaArrowDown,
   FaCheck,
-  FaCode,
   FaCloud,
+  FaCode,
   FaDatabase,
   FaPlug,
 } from "react-icons/fa6";
 
 import {
-  HiOutlineSparkles,
-  HiOutlineCpuChip,
   HiOutlineBolt,
+  HiOutlineCpuChip,
+  HiOutlineSparkles,
 } from "react-icons/hi2";
 
-import featureIcon from "/images/cloud-with-cellphone-screen.png";
-import featureIcon2 from "/images/predictive.png";
-import featureIcon3 from "/images/cloud.png";
 import featureIcon4 from "/images/api-integration.png";
+import featureIcon from "/images/cloud-with-cellphone-screen.png";
+import featureIcon3 from "/images/cloud.png";
+import featureIcon2 from "/images/predictive.png";
 
 // ============================================================
 // DATA
@@ -834,9 +834,11 @@ const Feature = () => {
                       }}
                       className="text-[#0D47A1]"
                     >
-                      <NavLink to={"/Software_Development"}>
-                        <FaArrowRight className="text-xs" />
-                      </NavLink>
+                      {isActive ? (
+                        <FaArrowUp className="text-xs" />
+                      ) : (
+                        <FaArrowDown className="text-xs" />
+                      )}
                     </motion.div>
                   </div>
 

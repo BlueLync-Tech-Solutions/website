@@ -65,7 +65,7 @@
 //                       %
 //                     </h6>
 //                   </div>
-//                 </div>               
+//                 </div>
 //               </div>
 //             </div> */}
 //             <div className='flex items-center gap-16 mt-11'>
@@ -96,7 +96,7 @@
 //                   </span>
 //                 </button>
 //               </Link>
-//               <div>                
+//               <div>
 //               </div>
 //             </div>
 //           </div>
@@ -109,17 +109,16 @@
 //                 className='relative z-10 rotate-45 md:rotate-0 lg:rotate-[25deg] xl:rotate-[18deg] 2xl:rotate-12 3xl:rotate-0'
 //               />
 //             </div>
-            
+
 //           </div>
 //         </div>
 //       </div>
-      
+
 //     </section>
 //   );
 // };
 
 // export default Integrations;
-
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -136,15 +135,11 @@ import {
   FaRobot,
 } from "react-icons/fa6";
 
-import {
-  HiOutlineSparkles,
-  HiOutlineCpuChip,
-} from "react-icons/hi2";
+import { HiOutlineSparkles, HiOutlineCpuChip } from "react-icons/hi2";
 
 const Integrations = () => {
   return (
     <section className="relative overflow-hidden py-16 md:py-20 lg:py-24">
-
       {/* =====================================================
           BACKGROUND AI GRID
       ====================================================== */}
@@ -190,9 +185,7 @@ const Integrations = () => {
       />
 
       <div className="Container relative z-10">
-
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-10">
-
           {/* =================================================
               LEFT CONTENT
           ================================================== */}
@@ -216,7 +209,6 @@ const Integrations = () => {
             }}
             className="relative"
           >
-
             {/* AI BADGE */}
 
             <motion.div
@@ -236,7 +228,6 @@ const Integrations = () => {
               }}
               className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#0D47A1]/10 bg-white/50 px-5 py-2.5 shadow-sm backdrop-blur-xl"
             >
-
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0D47A1] text-white">
                 <HiOutlineSparkles className="text-sm" />
               </span>
@@ -246,45 +237,33 @@ const Integrations = () => {
               </span>
 
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500 shadow-[0_0_8px_#22c55e]" />
-
             </motion.div>
 
             {/* SMALL TITLE */}
 
             <div className="mb-4 flex items-center gap-3">
-
-              <img
-                src={titleShape}
-                draggable={false}
-                alt="Shape"
-              />
+              <img src={titleShape} draggable={false} alt="Shape" />
 
               <span className="font-Rajdhani text-[25px] font-bold uppercase tracking-wide text-[#0D47A1]">
                 Integrations
               </span>
-
             </div>
 
             {/* MAIN HEADING */}
 
             <h1 className="font-Rajdhani text-[36px] font-bold leading-[1.08] text-[#0D47A1] sm:text-[44px] md:text-[50px] lg:text-[45px] xl:text-[52px]">
-
               Connect everything.
-
               <span className="block bg-gradient-to-r from-[#0D47A1] via-[#1976D2] to-[#00695C] bg-clip-text text-transparent">
                 Intelligence everywhere.
               </span>
-
             </h1>
 
             {/* DESCRIPTION */}
 
             <p className="mt-6 max-w-[650px] font-Nunito text-[15px] leading-7 text-[#0D47A1]/70 md:text-[17px]">
-
               Connect your applications, data, cloud platforms and business
               processes into one intelligent digital ecosystem. Our integration
               solutions help your technology communicate, automate and scale.
-
             </p>
 
             {/* =================================================
@@ -292,7 +271,6 @@ const Integrations = () => {
             ================================================== */}
 
             <div className="mt-7 flex flex-wrap gap-3">
-
               {[
                 {
                   icon: <FaPlug />,
@@ -311,7 +289,6 @@ const Integrations = () => {
                   text: "AI Ready",
                 },
               ].map((item) => (
-
                 <motion.div
                   key={item.text}
                   whileHover={{
@@ -319,19 +296,13 @@ const Integrations = () => {
                   }}
                   className="flex items-center gap-2 rounded-full border border-[#0D47A1]/10 bg-white/50 px-4 py-2.5 shadow-sm backdrop-blur-md"
                 >
-
-                  <span className="text-[#0D47A1]">
-                    {item.icon}
-                  </span>
+                  <span className="text-[#0D47A1]">{item.icon}</span>
 
                   <span className="font-Rajdhani text-[10px] font-bold uppercase tracking-wider text-[#0D47A1]/70">
                     {item.text}
                   </span>
-
                 </motion.div>
-
               ))}
-
             </div>
 
             {/* =================================================
@@ -339,33 +310,22 @@ const Integrations = () => {
             ================================================== */}
 
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-
               {[
                 "Seamless system connectivity",
                 "Real-time data exchange",
                 "Intelligent automation",
                 "Scalable architecture",
               ].map((item) => (
-
-                <div
-                  key={item}
-                  className="flex items-center gap-3"
-                >
-
+                <div key={item} className="flex items-center gap-3">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-50">
-
                     <FaCheck className="text-[9px] text-green-600" />
-
                   </span>
 
                   <span className="font-Nunito text-[13px] text-[#0D47A1]/70">
                     {item}
                   </span>
-
                 </div>
-
               ))}
-
             </div>
 
             {/* =================================================
@@ -373,47 +333,30 @@ const Integrations = () => {
             ================================================== */}
 
             <div className="mt-9 flex flex-wrap items-center gap-5">
-
-              <Link
-                to="/about3"
-                className="group inline-flex"
-              >
-
+              <Link to="/About-Us" className="group inline-flex">
                 <button
                   type="button"
                   className="flex items-center gap-3 rounded-full bg-[#0D47A1] px-7 py-4 font-Rajdhani text-sm font-bold text-white shadow-[0_12px_30px_rgba(13,71,161,0.20)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#1565C0] hover:shadow-[0_18px_40px_rgba(13,71,161,0.25)]"
                 >
-
                   Learn More
-
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10">
-
                     <FaArrowRight className="text-[10px] transition-transform duration-300 group-hover:translate-x-1" />
-
                   </span>
-
                 </button>
-
               </Link>
 
               <div className="flex items-center gap-2">
-
                 <span className="relative flex h-2.5 w-2.5">
-
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-60" />
 
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
-
                 </span>
 
                 <span className="font-Rajdhani text-[10px] font-bold uppercase tracking-[0.15em] text-[#0D47A1]/50">
                   Integration Ready
                 </span>
-
               </div>
-
             </div>
-
           </motion.div>
 
           {/* =================================================
@@ -439,7 +382,6 @@ const Integrations = () => {
             }}
             className="relative flex min-h-[480px] items-center justify-center"
           >
-
             {/* =================================================
                 ORBIT SYSTEM
             ================================================== */}
@@ -483,7 +425,6 @@ const Integrations = () => {
               }}
               className="absolute h-[400px] w-[400px]"
             >
-
               <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-[#0D47A1] shadow-[0_0_15px_rgba(13,71,161,0.5)]" />
 
               <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-[#1976D2] shadow-[0_0_15px_rgba(25,118,210,0.5)]" />
@@ -491,7 +432,6 @@ const Integrations = () => {
               <div className="absolute left-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-[#00695C] shadow-[0_0_15px_rgba(0,105,92,0.5)]" />
 
               <div className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-[#7C4DFF] shadow-[0_0_15px_rgba(124,77,255,0.5)]" />
-
             </motion.div>
 
             {/* =================================================
@@ -509,7 +449,6 @@ const Integrations = () => {
               }}
               className="relative z-10 flex h-[300px] w-[300px] items-center justify-center rounded-[50px] border border-white/80 bg-white/50 shadow-[0_30px_80px_rgba(13,71,161,0.15)] backdrop-blur-xl md:h-[350px] md:w-[350px]"
             >
-
               {/* IMAGE GLOW */}
 
               <div className="absolute inset-10 rounded-full bg-[#38BDF8]/20 blur-[70px]" />
@@ -526,7 +465,6 @@ const Integrations = () => {
               {/* CENTER CORE */}
 
               <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/80 bg-white/85 px-4 py-2 shadow-lg backdrop-blur-md">
-
                 <HiOutlineCpuChip className="text-[#0D47A1]" />
 
                 <span className="font-Rajdhani text-[9px] font-bold uppercase tracking-[0.18em] text-[#0D47A1]">
@@ -534,9 +472,7 @@ const Integrations = () => {
                 </span>
 
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
-
               </div>
-
             </motion.div>
 
             {/* =================================================
@@ -554,17 +490,12 @@ const Integrations = () => {
               }}
               className="absolute left-0 top-[12%] z-20 hidden rounded-2xl border border-white/80 bg-white/75 p-4 shadow-xl backdrop-blur-xl sm:block"
             >
-
               <div className="flex items-center gap-3">
-
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0D47A1]/10 text-[#0D47A1]">
-
                   <FaPlug />
-
                 </div>
 
                 <div>
-
                   <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/45">
                     APIs
                   </p>
@@ -572,11 +503,8 @@ const Integrations = () => {
                   <p className="font-Rajdhani text-sm font-bold text-[#0D47A1]">
                     Connected
                   </p>
-
                 </div>
-
               </div>
-
             </motion.div>
 
             {/* =================================================
@@ -594,17 +522,12 @@ const Integrations = () => {
               }}
               className="absolute bottom-[13%] right-0 z-20 hidden rounded-2xl border border-white/80 bg-white/75 p-4 shadow-xl backdrop-blur-xl sm:block"
             >
-
               <div className="flex items-center gap-3">
-
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-50 text-green-600">
-
                   <FaCheck />
-
                 </div>
 
                 <div>
-
                   <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/45">
                     Status
                   </p>
@@ -612,11 +535,8 @@ const Integrations = () => {
                   <p className="font-Rajdhani text-sm font-bold text-[#0D47A1]">
                     AI Ready
                   </p>
-
                 </div>
-
               </div>
-
             </motion.div>
 
             {/* =================================================
@@ -634,21 +554,15 @@ const Integrations = () => {
               }}
               className="absolute right-[4%] top-[8%] z-20 hidden rounded-full border border-white/80 bg-white/70 px-4 py-2 shadow-lg backdrop-blur-xl lg:flex"
             >
-
               <div className="flex items-center gap-2">
-
                 <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
 
                 <span className="font-Rajdhani text-[9px] font-bold uppercase tracking-widest text-[#0D47A1]">
                   Live Integration
                 </span>
-
               </div>
-
             </motion.div>
-
           </motion.div>
-
         </div>
 
         {/* =====================================================
@@ -672,19 +586,13 @@ const Integrations = () => {
           }}
           className="mt-12"
         >
-
           <div className="flex flex-col items-center justify-between gap-5 rounded-[24px] border border-[#0D47A1]/10 bg-white/35 p-5 shadow-sm backdrop-blur-xl md:flex-row md:px-7">
-
             <div className="flex items-center gap-3">
-
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0D47A1] text-white">
-
                 <HiOutlineSparkles />
-
               </div>
 
               <div>
-
                 <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-[0.2em] text-[#0D47A1]/45">
                   Integration Platform
                 </p>
@@ -692,37 +600,22 @@ const Integrations = () => {
                 <p className="font-Rajdhani text-[17px] font-bold text-[#0D47A1]">
                   One connected ecosystem for your business.
                 </p>
-
               </div>
-
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-
-              {[
-                "Cloud",
-                "API",
-                "Data",
-                "AI",
-              ].map((item) => (
-
+              {["Cloud", "API", "Data", "AI"].map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-[#0D47A1]/10 bg-white/50 px-4 py-2 font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/60"
                 >
                   ✓ {item}
                 </span>
-
               ))}
-
             </div>
-
           </div>
-
         </motion.div>
-
       </div>
-
     </section>
   );
 };
