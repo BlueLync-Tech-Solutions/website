@@ -641,7 +641,7 @@ const About = () => {
               <div className="mt-9 flex flex-wrap items-center gap-6">
 
                 <Link
-                  to="/about3"
+                  to="/technologyIntro"
                   className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#1976D2] px-7 py-3.5 font-Rajdhani text-[15px] font-bold text-white shadow-[0_10px_35px_rgba(25,118,210,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_45px_rgba(56,189,248,0.3)]"
                 >
 

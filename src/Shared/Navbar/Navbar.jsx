@@ -174,7 +174,7 @@ export default function Navbar() {
 
       {/* HEADER */}
       {/* Orange */}
-      <header className="header-area header-sticky bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 shadow-md py-1 lg:py-2 transition-all duration-300 text-white fixed w-full top-0 left-0 z-50">
+      <header className="header-area header-sticky bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 shadow-md py-0.5 lg:py-1 transition-all duration-300 text-white sticky top-0 w-full z-50">
        {/* Blue */}
        {/* <header className="header-area header-sticky bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 shadow-md py-1 lg:py-2 transition-all duration-300 text-white fixed w-full top-0 left-0 z-50"> */}
        {/* Green */}
@@ -190,7 +190,7 @@ export default function Navbar() {
                   <img
                     src={Logo3}
                     alt="Logo"
-                    className="h-10 w-auto"
+                    className="h-9 w-auto"
                     draggable="false"
                   />
                 </NavLink>
@@ -201,7 +201,7 @@ export default function Navbar() {
                   <img
                     src={Logo}
                     alt="Logo"
-                    className="h-15 w-auto"
+                    className="h-12 w-auto"
                     draggable="false"
                   />
                 </NavLink>
