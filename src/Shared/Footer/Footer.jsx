@@ -121,13 +121,11 @@
 
 // export default Footer;
 
-
 import { Link } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaEnvelope, FaRegCircleCheck } from "react-icons/fa6";
 import footerShape from "/images/hand.png";
-
 import emailjs from "@emailjs/browser";
 import { useState, useEffect } from "react";
 
@@ -165,9 +163,7 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-[url('/images/footer-bg.png')] bg-cover bg-center pt-28 pb-10 overflow-hidden">
-
       <div className="Container grid grid-cols-12 gap-10">
-
         {/* About */}
         <div className="col-span-12 md:col-span-6 lg:col-span-3">
           <h4 className="text-white text-[28px] font-semibold mb-6">
@@ -187,14 +183,18 @@ const Footer = () => {
 
         {/* Company */}
         <div className="col-span-12 md:col-span-6 lg:col-span-3">
-          <h4 className="text-white text-[28px] font-semibold mb-6">
-            Company
-          </h4>
+          <h4 className="text-white text-[28px] font-semibold mb-6">Company</h4>
 
           <ul className="space-y-3 text-white/90">
-            <li><Link to="/About-Us">About Us</Link></li>
-            <li><Link to="/Microsoft-Service">Microsoft</Link></li>
-            <li><Link to="/Careers">Careers</Link></li>
+            <li>
+              <Link to="/About-Us">About Us</Link>
+            </li>
+            <li>
+              <Link to="/Microsoft-Service">Microsoft</Link>
+            </li>
+            <li>
+              <Link to="/Careers">Careers</Link>
+            </li>
           </ul>
         </div>
 
@@ -213,23 +213,56 @@ const Footer = () => {
           </ul> */}
 
           <ul className="space-y-3 text-white/90">
-              <li><a href="/AWSService" className="hover:underline">AWS Service</a></li>
-              <li><a href="/Mobile_App" className="hover:underline">Mobile APPS</a></li>
-              <li><a href="/digitalMarketing" className="hover:underline">Digital Marketing</a></li>
-              <li><a href="/Quality_Assurance" className="hover:underline">Quality Assurance</a></li>
-              <li><a href="/UI_Design_Development" className="hover:underline">UI/UX Design</a></li>
+            <li>
+              <Link to="/AWSService" className="hover:underline">
+                AWS Service
+              </Link>
+              {/* <a href="/AWSService" className="hover:underline">
+                AWS Service
+              </a> */}
+            </li>
+            <li>
+              <Link to="/Mobile_App" className="hover:underline">
+                Mobile APPS
+              </Link>
+              {/* <a href="/Mobile_App" className="hover:underline">
+                Mobile APPS
+              </a> */}
+            </li>
+            <li>
+              <Link to="/digitalMarketing" className="hover:underline">
+                Digital Marketing
+              </Link>
+              {/* <a href="/digitalMarketing" className="hover:underline">
+                Digital Marketing
+              </a> */}
+            </li>
+            <li>
+              <Link to="/Quality_Assurance" className="hover:underline">
+                Quality Assurance
+              </Link>
+              {/* <a href="/Quality_Assurance" className="hover:underline">
+                Quality Assurance
+              </a> */}
+            </li>
+            <li>
+              <Link to="/UI_Design_Development" className="hover:underline">
+                UI/UX Design
+              </Link>
+              {/* <a href="/UI_Design_Development" className="hover:underline">
+                UI/UX Design
+              </a> */}
+            </li>
           </ul>
         </div>
 
         {/* Newsletter */}
         <div className="col-span-12 md:col-span-6 lg:col-span-3">
-
           <h4 className="text-white text-[28px] font-semibold mb-6">
             Newsletter
           </h4>
 
           <form onSubmit={sendEmail} className="flex flex-col gap-4">
-
             <div className="relative">
               <input
                 type="email"
@@ -250,7 +283,6 @@ const Footer = () => {
               DISCOVER MORE
               <GoArrowRight size={20} />
             </button>
-
           </form>
 
           <p className="flex items-center gap-2 text-white mt-5">
@@ -268,10 +300,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-white/20 mt-16 pt-6">
         <div className="Container flex flex-col md:flex-row justify-between text-white text-sm">
-
-          <p>
-            ©2025 BlueLync. Designed By BlueLync Tech Solutions
-          </p>
+          <p>©2025 BlueLync. Designed By BlueLync Tech Solutions</p>
 
           {/* <div className="flex gap-6">
             <Link to="/terms">Terms & Conditions</Link>
@@ -285,13 +314,12 @@ const Footer = () => {
               Privacy Policy
             </span>
           </div>
-            {/* <div className="flex gap-6 text-sm text-gray-600">
+          {/* <div className="flex gap-6 text-sm text-gray-600">
               <span>Terms & Conditions</span>
               <span>Privacy Policy</span>
             </div> */}
         </div>
       </div>
-
     </footer>
   );
 };
