@@ -210,6 +210,7 @@
 
 
 
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -368,11 +369,18 @@ const jobs = [
   
 ];
 
+const VISIBLE_JOBS = 5;
+
 const Career = () => {
   const totalOpenings = jobs.reduce(
     (total, job) => total + job.openings,
     0
   );
+
+  // Only the first few roles show until "Load More" is clicked.
+  const [showAllJobs, setShowAllJobs] = useState(false);
+
+  const visibleJobs = showAllJobs ? jobs : jobs.slice(0, VISIBLE_JOBS);
 
   return (
     <section
@@ -411,11 +419,12 @@ const Career = () => {
             HERO HEADER
         ====================================================== */}
 
-        <div className="mb-12 grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+        {/* 7/5 split tightens the gap to the card; items-start aligns it with the heading */}
+        <div className="mb-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
 
           {/* LEFT */}
 
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-7">
 
             {/* AI BADGE */}
 
@@ -426,13 +435,13 @@ const Career = () => {
               </span>
 
               <span className="font-Rajdhani text-[11px] font-bold uppercase tracking-[0.25em] text-[#0D47A1]">
-                Career Intelligence
+                Now Hiring
               </span>
 
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
 
               <span className="font-Rajdhani text-[10px] font-semibold uppercase tracking-widest text-green-600">
-                Hiring
+                Join Our Team
               </span>
 
             </div>
@@ -449,7 +458,8 @@ const Career = () => {
 
             </h1>
 
-            <p className="mt-6 max-w-[700px] font-Nunito text-[16px] leading-7 text-[#0D47A1]/75 md:text-[18px]">
+            {/* /90 keeps this above the 4.5:1 AA line across the whole gradient */}
+            <p className="mt-6 max-w-[700px] font-Nunito text-[16px] leading-7 text-[#0D47A1]/90 md:text-[18px]">
               Join a team of technology professionals building intelligent
               software, scalable platforms and next-generation digital
               solutions.
@@ -459,7 +469,7 @@ const Career = () => {
 
           {/* RIGHT - OPEN POSITIONS */}
 
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-5">
 
             <div className="relative overflow-hidden rounded-[28px] border border-white/70 bg-white/70 p-6 shadow-[0_20px_60px_rgba(13,71,161,0.12)] backdrop-blur-xl">
 
@@ -572,11 +582,16 @@ const Career = () => {
                 Sunday to Thursday
               </h4>
 
+              {/* Spells out the non-standard week so the days don't read as a typo */}
+              <p className="font-Nunito text-xs text-[#0D47A1]/60">
+                Friday &amp; Saturday off
+              </p>
+
             </div>
 
           </div>
 
-          {/* Working Hours */}
+          {/* Shift Timing */}
 
           <div className="group flex items-center gap-4 rounded-2xl border border-white/70 bg-white/55 p-5 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/75">
 
@@ -587,12 +602,17 @@ const Career = () => {
             <div>
 
               <p className="font-Rajdhani text-[11px] font-bold uppercase tracking-widest text-orange-600">
-                Working Hours
+                Shift Timing
               </p>
 
               <h4 className="font-Rajdhani text-xl font-bold text-[#0D2A4A]">
-                4:00 PM – 1:30 AM IST
+                4:00 PM to 1:30 AM IST
               </h4>
+
+              {/* Reads as a deliberate shift rather than an unusually long day */}
+              <p className="font-Nunito text-xs text-[#0D47A1]/60">
+                Evening shift
+              </p>
 
             </div>
 
@@ -642,7 +662,7 @@ const Career = () => {
 
         <div className="space-y-4">
 
-          {jobs.map((job) => {
+          {visibleJobs.map((job) => {
 
             const JobIcon = job.icon;
 
@@ -689,7 +709,7 @@ const Career = () => {
                             {job.type}
                           </span>
 
-                          <span className="flex items-center gap-1 font-Rajdhani text-[11px] font-semibold text-[#0D47A1]/60">
+                          <span className="flex items-center gap-1 font-Rajdhani text-[12px] font-semibold text-[#0D47A1]/90">
 
                             <HiOutlineMapPin />
 
@@ -715,7 +735,7 @@ const Career = () => {
 
                   <div className="lg:col-span-5">
 
-                    <p className="font-Nunito text-[14px] leading-6 text-[#0D47A1]/65">
+                    <p className="font-Nunito text-[14px] leading-6 text-[#0D47A1]/90">
                       {job.description}
                     </p>
 
@@ -729,7 +749,7 @@ const Career = () => {
 
                     <div className="rounded-xl border border-[#0D47A1]/5 bg-white/60 p-3">
 
-                      <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/40">
+                      <p className="font-Rajdhani text-[11px] font-bold uppercase tracking-wider text-[#0D47A1]/90">
                         Experience
                       </p>
 
@@ -741,7 +761,7 @@ const Career = () => {
 
                     <div className="rounded-xl border border-[#0D47A1]/5 bg-white/60 p-3">
 
-                      <p className="font-Rajdhani text-[9px] font-bold uppercase tracking-wider text-[#0D47A1]/40">
+                      <p className="font-Rajdhani text-[11px] font-bold uppercase tracking-wider text-[#0D47A1]/90">
                         Openings
                       </p>
 
@@ -802,6 +822,30 @@ const Career = () => {
           })}
 
         </div>
+
+        {/* =====================================================
+            LOAD MORE
+        ====================================================== */}
+
+        {!showAllJobs && jobs.length > VISIBLE_JOBS && (
+          <div className="mt-8 flex justify-center">
+
+            <button
+              type="button"
+              onClick={() => setShowAllJobs(true)}
+              className="group/more inline-flex items-center gap-2 rounded-full border border-[#0D47A1]/15 bg-white/70 px-7 py-3 font-Rajdhani text-sm font-bold uppercase tracking-widest text-[#0D47A1] shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-lg"
+            >
+
+              Load More
+
+              <span className="rounded-full bg-[#0D47A1] px-2 py-0.5 text-[11px] text-white">
+                {jobs.length - VISIBLE_JOBS}
+              </span>
+
+            </button>
+
+          </div>
+        )}
 
         {/* =====================================================
             REQUIREMENTS / CTA
@@ -905,8 +949,11 @@ const Career = () => {
 
         {/* =====================================================
             FOOTER TAGS
+            Hidden for now — decorative only, nothing links anywhere.
+            Uncomment as-is if design decides to keep them.
         ====================================================== */}
 
+        {/*
         <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
 
           {[
@@ -927,6 +974,7 @@ const Career = () => {
           ))}
 
         </div>
+        */}
 
       </div>
     </section>
