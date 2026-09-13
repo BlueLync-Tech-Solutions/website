@@ -1,4 +1,3 @@
-
 // import { Link } from 'react-router-dom';
 // import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Autoplay } from 'swiper/modules';
@@ -135,156 +134,156 @@
 
 // export default TeamMember;
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 import {
   FaFacebookF,
   FaLinkedinIn,
   FaPinterestP,
   FaXTwitter,
-} from 'react-icons/fa6';
+} from "react-icons/fa6";
 
-import { IoArrowUpOutline } from 'react-icons/io5';
+import { IoArrowUpOutline } from "react-icons/io5";
 
-import teamThumb from '/images/team.png';
-import teamThumb3 from '/images/team_4.png';
-import teamThumb4 from '/images/team.png';
+import teamThumb from "/images/team.png";
+import teamThumb3 from "/images/team_4.png";
+import teamThumb4 from "/images/team.png";
 
 const teamData = [
   {
     id: 1,
     teamThumb: teamThumb,
-    teamTitle: 'Sri Latha Kaku',
-    teamDesc: 'Founder & Director',
+    teamTitle: "Sri Latha Kaku",
+    teamDesc: "Founder & Director",
   },
-  {
-    id: 2,
-    teamThumb: teamThumb3,
-    teamTitle: 'Prasad Kaku',
-    teamDesc: 'Business Head',
-  },
-  {
-    id: 3,
-    teamThumb: teamThumb3,
-    teamTitle: 'Sobhan M',
-    teamDesc: 'Project Delivery Manager',
-  },
-  {
-    id: 4,
-    teamThumb: teamThumb3,
-    teamTitle: 'Vinnu',
-    teamDesc: 'Development Lead',
-  },
-  {
-    id: 5,
-    teamThumb: teamThumb4,
-    teamTitle: 'Nova',
-    teamDesc: 'HR',
-  },
-  {
-    id: 6,
-    teamThumb: teamThumb3,
-    teamTitle: 'Praveen Mekala',
-    teamDesc: 'Power Apps Developer',
-  },
-  {
-    id: 7,
-    teamThumb: teamThumb3,
-    teamTitle: 'Surendra',
-    teamDesc: 'Data Engineer',
-  },
-  {
-    id: 8,
-    teamThumb: teamThumb3,
-    teamTitle: 'Vasu',
-    teamDesc: 'SharePoint',
-  },
-  {
-    id: 9,
-    teamThumb: teamThumb4,
-    teamTitle: 'Sowjanya',
-    teamDesc: 'Designer',
-  },
-  {
-    id: 10,
-    teamThumb: teamThumb4,
-    teamTitle: 'Sudha',
-    teamDesc: '.Net Developer',
-  },
-  {
-    id: 11,
-    teamThumb: teamThumb4,
-    teamTitle: 'Triveni',
-    teamDesc: 'Tester',
-  },
-  {
-    id: 12,
-    teamThumb: teamThumb3,
-    teamTitle: 'Madhu',
-    teamDesc: 'Sr. Java Developer',
-  },
-  {
-    id: 13,
-    teamThumb: teamThumb3,
-    teamTitle: 'Prabhu',
-    teamDesc: 'Sr. Dot Net Developer',
-  },
-  {
-    id: 14,
-    teamThumb: teamThumb3,
-    teamTitle: 'Ramesh',
-    teamDesc: 'Sr. Dot Net Developer',
-  },
-  {
-    id: 15,
-    teamThumb: teamThumb3,
-    teamTitle: 'Girish',
-    teamDesc: 'CTO',
-  },
-  {
-    id: 16,
-    teamThumb: teamThumb3,
-    teamTitle: 'Sunil',
-    teamDesc: 'Delivery Manager',
-  },
-  {
-    id: 17,
-    teamThumb: teamThumb3,
-    teamTitle: 'Phani',
-    teamDesc: 'Client Relationship Manager',
-  },
-  {
-    id: 18,
-    teamThumb: teamThumb3,
-    teamTitle: 'Sarathi',
-    teamDesc: 'Delivery Manager',
-  },
-  {
-    id: 19,
-    teamThumb: teamThumb3,
-    teamTitle: 'Sheik',
-    teamDesc: 'Project Manager',
-  },
-  {
-    id: 20,
-    teamThumb: teamThumb4,
-    teamTitle: 'Shahanaz',
-    teamDesc: 'HR',
-  },
-  {
-    id: 21,
-    teamThumb: teamThumb3,
-    teamTitle: 'Manohar',
-    teamDesc: 'CFO',
-  },
-  {
-    id: 22,
-    teamThumb: teamThumb3,
-    teamTitle: 'Hari Krishna',
-    teamDesc: 'Delivery Manager - UK',
-  },
+  // {
+  //   id: 2,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Prasad Kaku',
+  //   teamDesc: 'Business Head',
+  // },
+  // {
+  //   id: 3,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Sobhan M',
+  //   teamDesc: 'Project Delivery Manager',
+  // },
+  // {
+  //   id: 4,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Vinnu',
+  //   teamDesc: 'Development Lead',
+  // },
+  // {
+  //   id: 5,
+  //   teamThumb: teamThumb4,
+  //   teamTitle: 'Nova',
+  //   teamDesc: 'HR',
+  // },
+  // {
+  //   id: 6,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Praveen Mekala',
+  //   teamDesc: 'Power Apps Developer',
+  // },
+  // {
+  //   id: 7,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Surendra',
+  //   teamDesc: 'Data Engineer',
+  // },
+  // {
+  //   id: 8,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Vasu',
+  //   teamDesc: 'SharePoint',
+  // },
+  // {
+  //   id: 9,
+  //   teamThumb: teamThumb4,
+  //   teamTitle: 'Sowjanya',
+  //   teamDesc: 'Designer',
+  // },
+  // {
+  //   id: 10,
+  //   teamThumb: teamThumb4,
+  //   teamTitle: 'Sudha',
+  //   teamDesc: '.Net Developer',
+  // },
+  // {
+  //   id: 11,
+  //   teamThumb: teamThumb4,
+  //   teamTitle: 'Triveni',
+  //   teamDesc: 'Tester',
+  // },
+  // {
+  //   id: 12,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Madhu',
+  //   teamDesc: 'Sr. Java Developer',
+  // },
+  // {
+  //   id: 13,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Prabhu',
+  //   teamDesc: 'Sr. Dot Net Developer',
+  // },
+  // {
+  //   id: 14,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Ramesh',
+  //   teamDesc: 'Sr. Dot Net Developer',
+  // },
+  // {
+  //   id: 15,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Girish',
+  //   teamDesc: 'CTO',
+  // },
+  // {
+  //   id: 16,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Sunil',
+  //   teamDesc: 'Delivery Manager',
+  // },
+  // {
+  //   id: 17,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Phani',
+  //   teamDesc: 'Client Relationship Manager',
+  // },
+  // {
+  //   id: 18,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Sarathi',
+  //   teamDesc: 'Delivery Manager',
+  // },
+  // {
+  //   id: 19,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Sheik',
+  //   teamDesc: 'Project Manager',
+  // },
+  // {
+  //   id: 20,
+  //   teamThumb: teamThumb4,
+  //   teamTitle: 'Shahanaz',
+  //   teamDesc: 'HR',
+  // },
+  // {
+  //   id: 21,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Manohar',
+  //   teamDesc: 'CFO',
+  // },
+  // {
+  //   id: 22,
+  //   teamThumb: teamThumb3,
+  //   teamTitle: 'Hari Krishna',
+  //   teamDesc: 'Delivery Manager - UK',
+  // },
 ];
 
 const TeamMember = () => {
@@ -308,26 +307,25 @@ const TeamMember = () => {
       },
 
       576: {
-        slidesPerView: 2,
+        slidesPerView: 1,
       },
 
       768: {
-        slidesPerView: 3,
+        slidesPerView: 1,
       },
 
       1024: {
-        slidesPerView: 4,
+        slidesPerView: 1,
       },
 
       1400: {
-        slidesPerView: 5,
+        slidesPerView: 1,
       },
     },
   };
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#f8fbff] via-[#eef6ff] to-white py-20 md:py-24 lg:py-28">
-
       {/* =====================================================
           BACKGROUND DECORATION
       ====================================================== */}
@@ -347,17 +345,14 @@ const TeamMember = () => {
       <div className="pointer-events-none absolute bottom-[12%] left-[5%] h-16 w-16 rounded-full border border-[#06b6d4]/10" />
 
       <div className="Container relative z-10">
-
         {/* =====================================================
             HEADER
         ====================================================== */}
 
         <div className="mb-14 flex flex-col items-center text-center">
-
           {/* Small Label */}
 
           <div className="mb-5 flex items-center gap-3">
-
             <span className="h-[1px] w-10 bg-gradient-to-r from-transparent to-[#1976D2]" />
 
             <span className="font-Rajdhani text-[14px] font-bold uppercase tracking-[0.3em] text-[#1976D2]">
@@ -365,19 +360,15 @@ const TeamMember = () => {
             </span>
 
             <span className="h-[1px] w-10 bg-gradient-to-l from-transparent to-[#1976D2]" />
-
           </div>
 
           {/* Main Heading */}
 
           <h2 className="max-w-[850px] font-Rajdhani text-[38px] font-bold leading-[1.05] text-[#0D2A4A] sm:text-[48px] md:text-[58px] lg:text-[64px]">
-
             Meet the minds
-
             <span className="block bg-gradient-to-r from-[#0D47A1] via-[#1976D2] to-[#06A6D6] bg-clip-text text-transparent">
               behind the magic.
             </span>
-
           </h2>
 
           {/* Description */}
@@ -387,7 +378,6 @@ const TeamMember = () => {
             problem-solvers working together to turn ambitious ideas into
             powerful digital experiences.
           </p>
-
         </div>
 
         {/* =====================================================
@@ -395,166 +385,138 @@ const TeamMember = () => {
         ====================================================== */}
 
         <Swiper {...swiperSettings}>
+          {teamData.map(({ id, teamThumb, teamTitle, teamDesc }) => (
+            <SwiperSlide key={id} className="pb-8">
+              {/* CARD */}
 
-          {teamData.map(
-            ({ id, teamThumb, teamTitle, teamDesc }) => (
-
-              <SwiperSlide key={id} className="pb-8">
-
-                {/* CARD */}
-
-                <div className="group relative h-full overflow-hidden rounded-[28px] border border-[#dbeafe] bg-white/80 p-[1px] shadow-[0_10px_40px_rgba(13,71,161,0.07)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-[#38bdf8]/50 hover:shadow-[0_25px_60px_rgba(13,71,161,0.15)]">
-
-                  <div className="relative h-full overflow-hidden rounded-[27px] bg-white px-5 pb-7 pt-6">
-
-                    {/* =====================================================
+              <div className="group relative mx-auto h-full w-full max-w-sm overflow-hidden rounded-[28px] border border-[#dbeafe] bg-white/80 p-[1px] shadow-[0_10px_40px_rgba(13,71,161,0.07)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-[#38bdf8]/50 hover:shadow-[0_25px_60px_rgba(13,71,161,0.15)]">
+                <div className="relative h-full overflow-hidden rounded-[27px] bg-white px-5 pb-7 pt-6">
+                  {/* =====================================================
                         CARD TOP
                     ====================================================== */}
 
-                    <div className="absolute left-5 top-5 z-10">
+                  <div className="absolute left-5 top-5 z-10">
+                    <span className="font-Rajdhani text-[13px] font-bold tracking-widest text-[#0D47A1]/25">
+                      {String(id).padStart(2, "0")}
+                    </span>
+                  </div>
 
-                      <span className="font-Rajdhani text-[13px] font-bold tracking-widest text-[#0D47A1]/25">
-                        {String(id).padStart(2, '0')}
-                      </span>
+                  <div className="absolute right-5 top-5 flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#06A6D6] shadow-[0_0_10px_#06A6D6]" />
 
-                    </div>
+                    <span className="font-Rajdhani text-[10px] font-semibold uppercase tracking-widest text-[#64748b]">
+                      Team
+                    </span>
+                  </div>
 
-                    <div className="absolute right-5 top-5 flex items-center gap-2">
-
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#06A6D6] shadow-[0_0_10px_#06A6D6]" />
-
-                      <span className="font-Rajdhani text-[10px] font-semibold uppercase tracking-widest text-[#64748b]">
-                        Team
-                      </span>
-
-                    </div>
-
-                    {/* =====================================================
+                  {/* =====================================================
                         PROFILE IMAGE
                     ====================================================== */}
 
-                    <div className="relative mx-auto mt-6 flex h-[210px] w-[210px] items-center justify-center">
+                  <div className="relative mx-auto mt-6 flex h-[210px] w-[210px] items-center justify-center">
+                    {/* Glow */}
 
-                      {/* Glow */}
+                    <div className="absolute inset-4 rounded-full bg-[#1976D2]/10 blur-2xl transition-all duration-500 group-hover:bg-[#06A6D6]/20" />
 
-                      <div className="absolute inset-4 rounded-full bg-[#1976D2]/10 blur-2xl transition-all duration-500 group-hover:bg-[#06A6D6]/20" />
+                    {/* Rotating Gradient Ring */}
 
-                      {/* Rotating Gradient Ring */}
-
-                      <div className="absolute inset-1 rounded-full bg-gradient-to-br from-[#0D47A1] via-[#1976D2] to-[#06A6D6] p-[2px] transition-transform duration-700 group-hover:rotate-180">
-
-                        <div className="flex h-full w-full items-center justify-center rounded-full bg-white">
-
-                          <div className="h-[184px] w-[184px] overflow-hidden rounded-full bg-[#edf5ff]">
-
-                            <img
-                              src={teamThumb}
-                              alt={teamTitle}
-                              draggable={false}
-                              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-
-                          </div>
-
+                    <div className="absolute inset-1 rounded-full bg-gradient-to-br from-[#0D47A1] via-[#1976D2] to-[#06A6D6] p-[2px] transition-transform duration-700 group-hover:rotate-180">
+                      <div className="flex h-full w-full items-center justify-center rounded-full bg-white">
+                        <div className="h-[184px] w-[184px] overflow-hidden rounded-full bg-[#edf5ff]">
+                          <img
+                            src={teamThumb}
+                            alt={teamTitle}
+                            draggable={false}
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
                         </div>
-
                       </div>
+                    </div>
 
-                      {/* =====================================================
+                    {/* =====================================================
                           SOCIAL BUTTON
                       ====================================================== */}
 
-                      <button
-                        type="button"
-                        aria-label={`Social links for ${teamTitle}`}
-                        className="absolute bottom-1 right-2 flex h-11 w-11 items-center justify-center rounded-full border border-white bg-[#0D47A1] text-white shadow-lg transition-all duration-500 group-hover:bg-[#06A6D6] group-hover:text-white"
-                      >
-                        <IoArrowUpOutline className="rotate-45 text-xl" />
-                      </button>
+                    <button
+                      type="button"
+                      aria-label={`Social links for ${teamTitle}`}
+                      className="absolute bottom-1 right-2 flex h-11 w-11 items-center justify-center rounded-full border border-white bg-[#0D47A1] text-white shadow-lg transition-all duration-500 group-hover:bg-[#06A6D6] group-hover:text-white"
+                    >
+                      <IoArrowUpOutline className="rotate-45 text-xl" />
+                    </button>
 
-                      {/* =====================================================
+                    {/* =====================================================
                           SOCIAL LINKS
                       ====================================================== */}
 
-                      <div className="absolute right-[-4px] top-8 flex translate-x-5 flex-col gap-2 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
+                    <div className="absolute right-[-4px] top-8 flex translate-x-5 flex-col gap-2 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
+                      <a
+                        href="#"
+                        aria-label="Facebook"
+                        className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-[#1877f2] hover:text-white"
+                      >
+                        <FaFacebookF />
+                      </a>
 
-                        <a
-                          href="#"
-                          aria-label="Facebook"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-[#1877f2] hover:text-white"
-                        >
-                          <FaFacebookF />
-                        </a>
+                      <a
+                        href="#"
+                        aria-label="LinkedIn"
+                        className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-[#0a66c2] hover:text-white"
+                      >
+                        <FaLinkedinIn />
+                      </a>
 
-                        <a
-                          href="#"
-                          aria-label="LinkedIn"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-[#0a66c2] hover:text-white"
-                        >
-                          <FaLinkedinIn />
-                        </a>
+                      <a
+                        href="#"
+                        aria-label="X"
+                        className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-black hover:text-white"
+                      >
+                        <FaXTwitter />
+                      </a>
 
-                        <a
-                          href="#"
-                          aria-label="X"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-black hover:text-white"
-                        >
-                          <FaXTwitter />
-                        </a>
-
-                        <a
-                          href="#"
-                          aria-label="Pinterest"
-                          className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-[#e60023] hover:text-white"
-                        >
-                          <FaPinterestP />
-                        </a>
-
-                      </div>
-
+                      <a
+                        href="#"
+                        aria-label="Pinterest"
+                        className="flex h-8 w-8 items-center justify-center rounded-full border border-[#e2e8f0] bg-white text-xs text-[#0D47A1] shadow-md transition hover:bg-[#e60023] hover:text-white"
+                      >
+                        <FaPinterestP />
+                      </a>
                     </div>
+                  </div>
 
-                    {/* =====================================================
+                  {/* =====================================================
                         DIVIDER
                     ====================================================== */}
 
-                    <div className="mx-auto mt-5 h-[2px] w-10 bg-gradient-to-r from-[#0D47A1] to-[#06A6D6] opacity-60 transition-all duration-500 group-hover:w-20" />
+                  <div className="mx-auto mt-5 h-[2px] w-10 bg-gradient-to-r from-[#0D47A1] to-[#06A6D6] opacity-60 transition-all duration-500 group-hover:w-20" />
 
-                    {/* =====================================================
+                  {/* =====================================================
                         NAME
                     ====================================================== */}
 
-                    <h3 className="mt-5 text-center font-Rajdhani text-[22px] font-bold text-[#0D2A4A] transition-colors duration-300 group-hover:text-[#1976D2]">
-                      {teamTitle}
-                    </h3>
+                  <h3 className="mt-5 text-center font-Rajdhani text-[22px] font-bold text-[#0D2A4A] transition-colors duration-300 group-hover:text-[#1976D2]">
+                    {teamTitle}
+                  </h3>
 
-                    {/* =====================================================
+                  {/* =====================================================
                         ROLE
                     ====================================================== */}
 
-                    <div className="mt-3 flex justify-center">
+                  <div className="mt-3 flex justify-center">
+                    <span className="rounded-full border border-[#1976D2]/10 bg-[#1976D2]/5 px-3 py-1 font-Rajdhani text-[12px] font-semibold uppercase tracking-wider text-[#1976D2]">
+                      {teamDesc}
+                    </span>
+                  </div>
 
-                      <span className="rounded-full border border-[#1976D2]/10 bg-[#1976D2]/5 px-3 py-1 font-Rajdhani text-[12px] font-semibold uppercase tracking-wider text-[#1976D2]">
-                        {teamDesc}
-                      </span>
-
-                    </div>
-
-                    {/* =====================================================
+                  {/* =====================================================
                         BOTTOM ACCENT
                     ====================================================== */}
 
-                    <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-[#0D47A1] via-[#1976D2] to-[#06A6D6] transition-all duration-700 group-hover:w-full" />
-
-                  </div>
-
+                  <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-[#0D47A1] via-[#1976D2] to-[#06A6D6] transition-all duration-700 group-hover:w-full" />
                 </div>
-
-              </SwiperSlide>
-
-            )
-          )}
-
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
 
         {/* =====================================================
@@ -562,7 +524,6 @@ const TeamMember = () => {
         ====================================================== */}
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 text-center sm:flex-row">
-
           <span className="font-Rajdhani text-sm font-medium text-slate-500">
             One team.
           </span>
@@ -578,9 +539,7 @@ const TeamMember = () => {
           <span className="font-Rajdhani text-sm font-bold text-[#1976D2]">
             One vision.
           </span>
-
         </div>
-
       </div>
     </section>
   );
