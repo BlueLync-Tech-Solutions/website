@@ -345,9 +345,9 @@ const Footer = () => {
             <span className="text-white hover:underline cursor-default">
               Terms & Conditions
             </span>
-            <span className="text-white hover:underline cursor-default">
+            <Link to="/Privacy-Policy" className="text-white hover:underline">
               Privacy Policy
-            </span>
+            </Link>
           </div>
           {/* <div className="flex gap-6 text-sm text-gray-600">
               <span>Terms & Conditions</span>
