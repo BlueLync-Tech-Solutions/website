@@ -124,7 +124,14 @@
 import { Link } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
-import { FaEnvelope, FaRegCircleCheck } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaRegCircleCheck,
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+  FaXTwitter,
+} from "react-icons/fa6";
 import footerShape from "/images/hand.png";
 import emailjs from "@emailjs/browser";
 import { useState, useEffect } from "react";
@@ -132,6 +139,16 @@ import { getEmailError } from "../validation";
 
 const SERVICE_ID = "service_jhqofxx";
 const TEMPLATE_ID = "template_kef526d";
+
+// Footer social links. Icons without a url are shown but not clickable;
+// fill in the Instagram / Facebook / X urls once the pages are ready.
+const SOCIAL_LINKS = [
+  { name: "LinkedIn", url: "https://in.linkedin.com/company/bluelync", Icon: FaLinkedinIn },
+  { name: "Instagram", url: "", Icon: FaInstagram },
+  { name: "Facebook", url: "", Icon: FaFacebookF },
+  { name: "X", url: "", Icon: FaXTwitter },
+];
+
 const PUBLIC_KEY = "NjHBvtspLkkIRCaMb";
 
 const Footer = () => {
@@ -198,6 +215,34 @@ const Footer = () => {
             <FaEnvelope />
             operations@bluelync.in
           </a>
+
+          <ul className="flex items-center gap-3 mt-6" aria-label="BlueLync on social media">
+            {SOCIAL_LINKS.map(({ name, url, Icon }) => (
+              <li key={name}>
+                {url ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`BlueLync on ${name} (opens in a new tab)`}
+                    title={name}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white text-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600"
+                  >
+                    <Icon />
+                  </a>
+                ) : (
+                  <span
+                    role="img"
+                    aria-label={`${name} (coming soon)`}
+                    title={`${name} (coming soon)`}
+                    className="flex h-10 w-10 cursor-default items-center justify-center rounded-full bg-white/10 text-white text-lg"
+                  >
+                    <Icon />
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Company */}
