@@ -252,18 +252,16 @@ const Integrations = () => {
             {/* MAIN HEADING */}
 
             <h1 className="font-Rajdhani text-[36px] font-bold leading-[1.08] text-[#0D47A1] sm:text-[44px] md:text-[50px] lg:text-[45px] xl:text-[52px]">
-              Connect everything.
+              One Connected Ecosystem.
               <span className="block bg-gradient-to-r from-[#0D47A1] via-[#1976D2] to-[#00695C] bg-clip-text text-transparent">
-                Intelligence everywhere.
+                Unlimited Possibilities.
               </span>
             </h1>
 
             {/* DESCRIPTION */}
 
             <p className="mt-6 max-w-[650px] font-Nunito text-[15px] leading-7 text-[#0D47A1]/70 md:text-[17px]">
-              Connect your applications, data, cloud platforms and business
-              processes into one intelligent digital ecosystem. Our integration
-              solutions help your technology communicate, automate and scale.
+              Break down silos and create a connected enterprise with secure, scalable integration solutions. We help organizations unify systems, streamline operations, and unlock the full value of their data through intelligent connectivity.
             </p>
 
             {/* =================================================
@@ -311,10 +309,10 @@ const Integrations = () => {
 
             <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {[
-                "Seamless system connectivity",
-                "Real-time data exchange",
-                "Intelligent automation",
-                "Scalable architecture",
+                "Enterprise-Wide System Integration",
+                "Secure API-Driven Connectivity",
+                "Automated Business Processes",
+                "Enhanced Operational Efficiency",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-50">
