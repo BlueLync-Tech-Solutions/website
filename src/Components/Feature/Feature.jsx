@@ -376,12 +376,12 @@ const features = [
     number: "01",
     icon: featureIcon,
     title: "Product Development",
-    aiTitle: "AI-Powered Product Engineering",
+    aiTitle: "Turn Ideas into Intelligent Digital Products",
     category: "BUILD",
-    desc: "Transform ideas into intelligent digital products with modern architecture, scalable engineering and AI-ready experiences.",
+    desc: "From concept to launch, we design and engineer AI-powered solutions with modern architecture, scalable platforms, and exceptional user experiences.",
     points: [
-      "AI-ready application architecture",
-      "Scalable product engineering",
+      "Intelligent application architecture",
+      "Scalable product development",
       "Modern UX and digital experiences",
     ],
     iconComponent: <FaCode />,
@@ -393,13 +393,13 @@ const features = [
     number: "02",
     icon: featureIcon2,
     title: "Data & Analytics",
-    aiTitle: "Predictive Intelligence",
+    aiTitle: "Intelligence That Drives Business Growth",
     category: "INTELLIGENCE",
-    desc: "Turn complex business data into meaningful insights using analytics, predictive intelligence and data-driven decision making.",
+    desc: "Turn complex data into meaningful business outcomes with advanced analytics, predictive modeling, and intelligent reporting. Gain deeper visibility, identify emerging opportunities, and make informed decisions with confidence.",
     points: [
-      "Predictive analytics",
-      "Business intelligence dashboards",
-      "Data-driven decision support",
+      "Predictive Analytics & Trend Forecasting",
+      "Business Intelligence & Executive Dashboards ",
+      "Data-Driven Strategy & Decision Support",
     ],
     iconComponent: <FaDatabase />,
     color: "#1565C0",
@@ -410,13 +410,14 @@ const features = [
     number: "03",
     icon: featureIcon3,
     title: "Cloud Services",
-    aiTitle: "Intelligent Cloud Infrastructure",
+    aiTitle: "Secure. Scalable. Future-Ready.",
     category: "CLOUD",
-    desc: "Build secure, scalable and future-ready cloud environments that adapt to your business as it grows.",
+    desc: "Build a modern cloud foundation that enables innovation, improves operational efficiency, and supports business growth. From strategy and migration to optimization and security, we deliver cloud solutions that are designed to evolve with your organization.",
     points: [
-      "Cloud-native architecture",
-      "Scalable infrastructure",
-      "Secure cloud migration",
+      "Cloud Transformation & Modernization",
+      "Scalable Infrastructure & Performance Optimization",
+      "Security, Compliance & Risk Management",
+      "Business Continuity & Disaster Recovery"
     ],
     iconComponent: <FaCloud />,
     color: "#0277BD",
@@ -427,13 +428,15 @@ const features = [
     number: "04",
     icon: featureIcon4,
     title: "API & Integration",
-    aiTitle: "Connected Digital Ecosystem",
+    aiTitle: "Connecting Applications, Data, and Business Processes",
     category: "CONNECT",
-    desc: "Connect applications, platforms and data through intelligent APIs and seamless integrations.",
+    desc: "Build a unified digital ecosystem with intelligent integration solutions that enhance collaboration, improve operational efficiency, and deliver real-time business insights. Our API-driven approach ensures secure, scalable, and future-ready connectivity across your organization.",
     points: [
-      "Enterprise API integration",
-      "System-to-system connectivity",
-      "Automated data exchange",
+      "Enterprise Application Integration",
+      "API Design, Development & Management",
+      "Real-Time Data Exchange & Synchronization",
+      "Business Process Automation",
+      "Secure & Scalable Connectivity Solutions"
     ],
     iconComponent: <FaPlug />,
     color: "#00695C",
@@ -584,8 +587,7 @@ const Feature = () => {
           {/* DESCRIPTION */}
 
           <p className="mx-auto mt-5 max-w-[720px] font-Nunito text-[15px] leading-7 text-[#0D47A1]/70 md:text-[17px]">
-            We combine AI, cloud, data, software and integration technologies to
-            create digital solutions that move businesses forward.
+            At BlueLync, we bring together AI, cloud, data, software, and integration technologies to create secure, scalable, and future-ready digital solutions that drive innovation, optimize operations, and deliver measurable business value. 
           </p>
         </motion.div>
 
