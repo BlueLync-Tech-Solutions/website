@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { scrollToTarget } from '../../Shared/Lenis/lenis';
 import titleShape from '/images/sub-title-shape.png';
+import { MAP_EMBED_URL, DIRECTIONS_URL } from '../../Shared/officeLocation';
 
 const Appointment = () => {
   // Job details passed from the "Apply" buttons on the Careers page.
@@ -235,7 +236,8 @@ return (
             <div className="relative h-full min-h-[560px] overflow-hidden rounded-[24px]">
 
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25355.1562983872!2d78.35600060961807!3d17.447000019055792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb94e6d2f7d1b1%3A0x0!2sHITEC%20City%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1730710700000!5m2!1sen!2sin"
+                src={MAP_EMBED_URL}
+                title="BlueLync Tech Solutions office location on Google Maps"
                 width="100%"
                 height="100%"
                 allowFullScreen=""
@@ -283,7 +285,7 @@ return (
                   </p>
 
                   <p className="font-Rajdhani text-sm font-bold text-white">
-                    HITEC City, Hyderabad
+                    KPHB Colony, Hyderabad
                   </p>
 
                 </div>
@@ -294,7 +296,7 @@ return (
 
               <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-[#061426]/90 p-5 backdrop-blur-xl">
 
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-4">
 
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#38BDF8]/10">
 
@@ -311,10 +313,34 @@ return (
                     </p>
 
                     <p className="mt-1 font-Nunito text-sm text-white/60">
-                      Hyderabad, Telangana, India
+                      KPHB Colony, Kukatpally, Hyderabad, Telangana
                     </p>
 
                   </div>
+
+                  <a
+                    href={DIRECTIONS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Get directions to BlueLync Tech Solutions on Google Maps (opens in a new tab)"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0D47A1] to-[#1976D2] px-5 py-2.5 font-Rajdhani text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(56,189,248,0.35)] sm:w-auto"
+                  >
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                      />
+                    </svg>
+                    Get Directions
+                  </a>
 
                   <div className="hidden items-center gap-2 sm:flex">
 

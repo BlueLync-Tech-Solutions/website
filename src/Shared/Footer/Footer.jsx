@@ -124,13 +124,31 @@
 import { Link } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
-import { FaEnvelope, FaRegCircleCheck } from "react-icons/fa6";
+import {
+  FaEnvelope,
+  FaRegCircleCheck,
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+  FaXTwitter,
+} from "react-icons/fa6";
 import footerShape from "/images/hand.png";
 import emailjs from "@emailjs/browser";
 import { useState, useEffect } from "react";
+import { getEmailError } from "../validation";
 
 const SERVICE_ID = "service_jhqofxx";
 const TEMPLATE_ID = "template_kef526d";
+
+// Footer social links. Icons without a url are shown but not clickable;
+// fill in the Instagram / Facebook / X urls once the pages are ready.
+const SOCIAL_LINKS = [
+  { name: "LinkedIn", url: "https://in.linkedin.com/company/bluelync", Icon: FaLinkedinIn },
+  { name: "Instagram", url: "", Icon: FaInstagram },
+  { name: "Facebook", url: "", Icon: FaFacebookF },
+  { name: "X", url: "", Icon: FaXTwitter },
+];
+
 const PUBLIC_KEY = "NjHBvtspLkkIRCaMb";
 
 const Footer = () => {
@@ -140,11 +158,26 @@ const Footer = () => {
     emailjs.init(PUBLIC_KEY);
   }, []);
 
+  const [emailError, setEmailError] = useState("");
+
+  const handleEmailChange = (value) => {
+    setEmail(value);
+    // Once an error is showing, re-check as the user types so it clears when fixed.
+    if (emailError) setEmailError(getEmailError(value));
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
 
+    const error = getEmailError(email);
+    setEmailError(error);
+    if (error) {
+      e.target.querySelector('input[name="email"]')?.focus();
+      return;
+    }
+
     const templateParams = {
-      toemail: email,
+      toemail: email.trim(),
       to_name: "Subscriber",
       message: "Thank you for subscribing to our newsletter!",
     };
@@ -163,26 +196,57 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-[url('/images/footer-bg.png')] bg-cover bg-center pt-28 pb-10 overflow-hidden">
-      <div className="Container grid grid-cols-12 gap-10">
+      <div className="Container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* About */}
-        <div className="col-span-12 md:col-span-6 lg:col-span-3">
+        <div>
           <h4 className="text-white text-[28px] font-semibold mb-6">
             About BlueLync
           </h4>
 
           <p className="text-white/80 mb-4">
-            Globally expedite enterprise-wide action items rather than
-            distinctive architectures. Globally engage market positioning.
+            Blue Lync empowers businesses with intelligent technology solutions that drive innovation, streamline operations, and accelerate growth through AI, cloud, data, and digital engineering services. 
           </p>
 
-          <div className="flex items-center gap-2 text-white">
+          <a
+            href="mailto:operations@bluelync.in?subject=Enquiry%20from%20BlueLync%20Website"
+            className="inline-flex items-center gap-2 text-white hover:underline"
+            aria-label="Email operations@bluelync.in"
+          >
             <FaEnvelope />
             operations@bluelync.in
-          </div>
+          </a>
+
+          <ul className="flex items-center gap-3 mt-6" aria-label="BlueLync on social media">
+            {SOCIAL_LINKS.map(({ name, url, Icon }) => (
+              <li key={name}>
+                {url ? (
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`BlueLync on ${name} (opens in a new tab)`}
+                    title={name}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white text-lg transition-all duration-300 hover:-translate-y-1 hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-600"
+                  >
+                    <Icon />
+                  </a>
+                ) : (
+                  <span
+                    role="img"
+                    aria-label={`${name} (coming soon)`}
+                    title={`${name} (coming soon)`}
+                    className="flex h-10 w-10 cursor-default items-center justify-center rounded-full bg-white/10 text-white text-lg"
+                  >
+                    <Icon />
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
 
         {/* Company */}
-        <div className="col-span-12 md:col-span-6 lg:col-span-3">
+        <div>
           <h4 className="text-white text-[28px] font-semibold mb-6">Company</h4>
 
           <ul className="space-y-3 text-white/90">
@@ -199,7 +263,7 @@ const Footer = () => {
         </div>
 
         {/* Services */}
-        <div className="col-span-12 md:col-span-6 lg:col-span-3">
+        <div>
           <h4 className="text-white text-[28px] font-semibold mb-6">
             Our Services
           </h4>
@@ -257,23 +321,39 @@ const Footer = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="col-span-12 md:col-span-6 lg:col-span-3">
+        <div>
           <h4 className="text-white text-[28px] font-semibold mb-6">
             Newsletter
           </h4>
 
-          <form onSubmit={sendEmail} className="flex flex-col gap-4">
+          <form onSubmit={sendEmail} className="flex flex-col gap-4" noValidate>
+            <div>
             <div className="relative">
               <input
                 type="email"
+                name="email"
                 placeholder="Enter Your E-Mail*"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full h-[56px] rounded-full bg-white/10 px-8 text-white placeholder:text-white outline-none"
+                onChange={(e) => handleEmailChange(e.target.value)}
+                onBlur={() => email && setEmailError(getEmailError(email))}
+                aria-invalid={!!emailError}
+                aria-describedby={emailError ? "newsletter-email-error" : undefined}
+                className={`w-full h-[56px] rounded-full bg-white/10 px-8 pr-14 text-white placeholder:text-white outline-none ${
+                  emailError ? "ring-2 ring-red-400" : ""
+                }`}
               />
 
               <HiOutlineMail className="absolute right-6 top-1/2 -translate-y-1/2 text-white text-xl" />
+            </div>
+            {emailError && (
+              <p
+                id="newsletter-email-error"
+                role="alert"
+                className="text-red-300 text-sm mt-2 px-4"
+              >
+                {emailError}
+              </p>
+            )}
             </div>
 
             <button
@@ -299,7 +379,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/20 mt-16 pt-6">
-        <div className="Container flex flex-col md:flex-row justify-between text-white text-sm">
+        <div className="Container flex flex-col md:flex-row gap-3 justify-between text-white text-sm">
           <p>©2025 BlueLync. Designed By BlueLync Tech Solutions</p>
 
           {/* <div className="flex gap-6">
@@ -310,9 +390,9 @@ const Footer = () => {
             <span className="text-white hover:underline cursor-default">
               Terms & Conditions
             </span>
-            <span className="text-white hover:underline cursor-default">
+            <Link to="/Privacy-Policy" className="text-white hover:underline">
               Privacy Policy
-            </span>
+            </Link>
           </div>
           {/* <div className="flex gap-6 text-sm text-gray-600">
               <span>Terms & Conditions</span>

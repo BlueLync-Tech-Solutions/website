@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { FaChevronDown, FaEnvelope } from "react-icons/fa6";
 import { FaPhoneAlt, FaTimes } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
+import { MAP_LINK_URL } from "../officeLocation";
 
 const MENU = [
   { label: "Home", to: "/" },
@@ -147,14 +148,28 @@ export default function Navbar() {
           <div className="mt-6 pt-4 text-[#0D47A1]">
             <h4 className="font-bold mb-2">Contact Us</h4>
             <ul className="space-y-2 text-sm">
-              <li className="flex gap-2 items-center">
-                <MdLocationPin /> Hyderabad, India
+              <li>
+                <a
+                  href={MAP_LINK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-2 items-center hover:underline"
+                  aria-label="View KPHB Colony, Hyderabad on Google Maps (opens in a new tab)"
+                >
+                  <MdLocationPin /> KPHB Colony, Hyderabad
+                </a>
               </li>
               <li className="flex gap-2 items-center">
                 <FaEnvelope /> hr-admin@bluelync.in
               </li>
-              <li className="flex gap-2 items-center">
-                <FaPhoneAlt /> +91-6304925404
+              <li>
+                <a
+                  href="tel:+916304925404"
+                  className="flex gap-2 items-center hover:underline"
+                  aria-label="Call +91-6304925404"
+                >
+                  <FaPhoneAlt /> +91-6304925404
+                </a>
               </li>
             </ul>
           </div>

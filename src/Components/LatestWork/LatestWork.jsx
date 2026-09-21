@@ -428,18 +428,16 @@ const LatestWork = () => {
           {/* MAIN TITLE */}
 
           <h1 className="font-Rajdhani text-[38px] font-bold leading-[1.05] text-[#082B55] sm:text-[46px] md:text-[56px]">
-            Intelligent tools.
+            Intelligent Technology.
             <span className="block bg-gradient-to-r from-[#0D47A1] via-[#1565C0] to-[#00695C] bg-clip-text text-transparent">
-              Infinite possibilities.
+              Limitless Potential.
             </span>
           </h1>
 
           {/* DESCRIPTION */}
 
           <p className="mx-auto mt-5 max-w-[760px] font-Nunito text-[15px] leading-7 text-[#0D47A1]/70 md:text-[17px]">
-            Explore the Microsoft technologies powering modern businesses — from
-            productivity and cloud computing to analytics, automation, security
-            and AI.
+            Empower your business with Microsoft's integrated ecosystem of productivity, cloud, data, security, automation, and AI solutions designed to drive innovation, efficiency, and sustainable growth
           </p>
         </div>
 

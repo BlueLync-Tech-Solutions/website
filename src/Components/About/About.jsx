@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import aboutThumb from "/images/left-img-1.png";
 // import aboutThumb2 from "/images/about-1.png";
-import titleShape from "/images/sub-title-shape.png";
 import itemIcon from "/images/tam1.png";
 import itemIcon2 from "/images/terget-1.png";
 import itemIcon3 from "/images/time.png";
@@ -46,9 +45,9 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <div className="flex items-center gap-2 mb-3">
-                <img src={titleShape} alt="Shape" />
+              <div className="flex items-center justify-center mb-3">
                 <h5 className="font-Rajdhani text-[#0D47A1] text-[30px] uppercase font-bold">
                   About Us
                 </h5>
@@ -59,21 +58,13 @@ const About = () => {
               </h2>
 
               <p className="font-Nunito text-[#1A237E] text-base sm:text-lg mb-6 leading-relaxed">
-                At BlueLync, we don’t just build technology — we craft
-                experiences. From startups to enterprises, our mission is to
-                empower brands with smart digital ecosystems that evolve, adapt,
-                and inspire.
+                At Blue Lync, we build intelligent digital solutions that help businesses innovate, scale, and thrive. Combining technology, strategy, and expertise, we deliver secure, future-ready solutions that drive measurable growth
               </p>
 
-              <p className="font-Nunito text-[#1A237E] text-base sm:text-lg mb-8 leading-relaxed">
-                We bring together passionate engineers, designers, and
-                strategists who thrive on innovation, crafting solutions that
-                drive measurable impact and sustainable digital growth.
-              </p>
 
               {/* Animated List */}
               <motion.ul
-                className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10"
+                className="mx-auto mb-10 grid w-fit grid-cols-1 gap-x-12 gap-y-6 text-left sm:grid-cols-2"
                 initial="hidden"
                 whileInView="visible"
                 variants={{
@@ -104,7 +95,7 @@ const About = () => {
               </motion.ul>
 
               {/* CTA */}
-              <div className="flex items-center gap-10">
+              <div className="flex items-center justify-center gap-10">
                 <Link to="/About-Us">
                   <motion.button
                     className="px-6 py-3 bg-[#1565C0] text-white font-semibold rounded-full shadow-md hover:bg-[#0D47A1] transition-all flex items-center gap-2"

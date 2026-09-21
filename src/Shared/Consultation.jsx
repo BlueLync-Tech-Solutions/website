@@ -1,23 +1,99 @@
 import  { useState } from 'react';
+import { MAP_LINK_URL } from './officeLocation';
+import { getEmailError } from './validation';
+
+const MESSAGE_MIN = 20;
+const MESSAGE_MAX = 500;
+
+const INITIAL_FORM = {
+  name: '',
+  phone: '',
+  email: '',
+  company: '',
+  help: 'Gen AI Services',
+  message: '',
+};
+
+const validateField = (key, value) => {
+  const v = value.trim();
+  switch (key) {
+    case 'name':
+      if (!v) return 'Name is required.';
+      if (v.length < 2) return 'Name must be at least 2 characters.';
+      return '';
+    case 'phone': {
+      if (!v) return 'Mobile number is required.';
+      // Accepts 10-digit Indian mobile numbers, optionally prefixed with +91 / 91 / 0
+      const digits = v.replace(/[\s-]/g, '').replace(/^(\+91|91|0)(?=\d{10}$)/, '');
+      if (!/^[6-9]\d{9}$/.test(digits)) return 'Enter a valid 10-digit mobile number.';
+      return '';
+    }
+    case 'email':
+      return getEmailError(v);
+    case 'message':
+      if (!v) return 'Message is required.';
+      if (v.length < MESSAGE_MIN) return `Message must be at least ${MESSAGE_MIN} characters.`;
+      if (v.length > MESSAGE_MAX) return `Message must be ${MESSAGE_MAX} characters or less.`;
+      return '';
+    default:
+      return '';
+  }
+};
+
+const REQUIRED_FIELDS = ['name', 'phone', 'email', 'message'];
+
+const inputClass = (hasError) =>
+  `w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 ${
+    hasError
+      ? 'border-red-500 focus:ring-red-500'
+      : 'border-BorderColor2 focus:ring-PrimaryColor-0'
+  }`;
 
 const Consultation = () => {
-  const [form, setForm] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    company: '',
-    help: 'Gen AI Services',
-    message: '',
-  });
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
 
   const handleChange = (key, value) => {
     setForm({ ...form, [key]: value });
+    if (touched[key]) {
+      setErrors({ ...errors, [key]: validateField(key, value) });
+    }
+  };
+
+  const handleBlur = (key) => {
+    setTouched({ ...touched, [key]: true });
+    setErrors({ ...errors, [key]: validateField(key, form[key]) });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newErrors = {};
+    REQUIRED_FIELDS.forEach((key) => {
+      const error = validateField(key, form[key]);
+      if (error) newErrors[key] = error;
+    });
+    setErrors(newErrors);
+    setTouched(Object.fromEntries(REQUIRED_FIELDS.map((key) => [key, true])));
+
+    if (Object.keys(newErrors).length > 0) {
+      e.target.querySelector(`[name="${Object.keys(newErrors)[0]}"]`)?.focus();
+      return;
+    }
+
     alert('✅ Your consultation request has been submitted successfully!');
+    setForm(INITIAL_FORM);
+    setErrors({});
+    setTouched({});
   };
+
+  const fieldError = (key) =>
+    errors[key] ? (
+      <p id={`${key}-error`} className="text-red-600 text-xs mt-1">
+        {errors[key]}
+      </p>
+    ) : null;
 
   return (
     <section  className="py-10 bg-[#ffc27f]  flex items-center z-10 mb-[50px]" >
@@ -76,7 +152,18 @@ const Consultation = () => {
               +91-6304925404
             </a>
           </p>
-          <p>📍 KPHB Colony, Hyderabad</p>
+          <p>
+            📍{' '}
+            <a
+              href={MAP_LINK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-PrimaryColor-0"
+              aria-label="View KPHB Colony, Hyderabad on Google Maps (opens in a new tab)"
+            >
+              KPHB Colony, Hyderabad
+            </a>
+          </p>
         </div>
       </div>
 
@@ -86,46 +173,67 @@ const Consultation = () => {
           Schedule A Free Consultation
         </h3>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Name"
-            value={form.name}
-            onChange={(e) => handleChange('name', e.target.value)}
-            className="w-full border border-BorderColor2 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-PrimaryColor-0"
-            required
-          />
+        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+          <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="Name*"
+              value={form.name}
+              onChange={(e) => handleChange('name', e.target.value)}
+              onBlur={() => handleBlur('name')}
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'name-error' : undefined}
+              className={inputClass(errors.name)}
+            />
+            {fieldError('name')}
+          </div>
+
+          <div>
+            <input
+              type="tel"
+              name="phone"
+              inputMode="tel"
+              placeholder="Mobile Number*"
+              maxLength={16}
+              value={form.phone}
+              onChange={(e) => handleChange('phone', e.target.value.replace(/[^\d+\s-]/g, ''))}
+              onBlur={() => handleBlur('phone')}
+              aria-invalid={!!errors.phone}
+              aria-describedby={errors.phone ? 'phone-error' : undefined}
+              className={inputClass(errors.phone)}
+            />
+            {fieldError('phone')}
+          </div>
+
+          <div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Company Email*"
+              value={form.email}
+              onChange={(e) => handleChange('email', e.target.value)}
+              onBlur={() => handleBlur('email')}
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'email-error' : undefined}
+              className={inputClass(errors.email)}
+            />
+            {fieldError('email')}
+          </div>
 
           <input
             type="text"
-            placeholder="Phone"
-            value={form.phone}
-            onChange={(e) => handleChange('phone', e.target.value)}
-            className="w-full border border-BorderColor2 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-PrimaryColor-0"
-            required
-          />
-
-          <input
-            type="email"
-            placeholder="Company Email"
-            value={form.email}
-            onChange={(e) => handleChange('email', e.target.value)}
-            className="w-full border border-BorderColor2 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-PrimaryColor-0"
-            required
-          />
-
-          <input
-            type="text"
+            name="company"
             placeholder="Company / Organization"
             value={form.company}
             onChange={(e) => handleChange('company', e.target.value)}
-            className="w-full border border-BorderColor2 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-PrimaryColor-0"
+            className={inputClass(false)}
           />
 
           <select
             value={form.help}
             onChange={(e) => handleChange('help', e.target.value)}
-            className="w-full border border-BorderColor2 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-PrimaryColor-0"
+            className={inputClass(false)}
           >
             <option>Gen AI Services</option>
             <option>Software Development</option>
@@ -134,13 +242,26 @@ const Consultation = () => {
             <option>Cyber Security</option>
           </select>
 
-          <textarea
-            placeholder="Your Message"
-            rows="4"
-            value={form.message}
-            onChange={(e) => handleChange('message', e.target.value)}
-            className="w-full border border-BorderColor2 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-PrimaryColor-0"
-          ></textarea>
+          <div>
+            <textarea
+              name="message"
+              placeholder={`Your Message* (min ${MESSAGE_MIN} characters)`}
+              rows="4"
+              maxLength={MESSAGE_MAX}
+              value={form.message}
+              onChange={(e) => handleChange('message', e.target.value)}
+              onBlur={() => handleBlur('message')}
+              aria-invalid={!!errors.message}
+              aria-describedby={errors.message ? 'message-error' : undefined}
+              className={inputClass(errors.message)}
+            ></textarea>
+            <div className="flex justify-between gap-2">
+              <div>{fieldError('message')}</div>
+              <span className="text-xs text-gray-500 mt-1 shrink-0">
+                {form.message.trim().length}/{MESSAGE_MAX}
+              </span>
+            </div>
+          </div>
 
           <button
             type="submit"

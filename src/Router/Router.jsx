@@ -19,6 +19,7 @@ import Salesforce_Adminstration from '../Components/Salesforce_Adminstration/Sal
 import Quality_Assurance from '../Components/Quality_Assurance/Quality_Assurance';
 import Mobile_App from '../Components/Mobile_App/Mobile_App';
 import MissionInner2 from '../Components/MissionInner2/MissionInner2';
+import PrivacyPolicy from '../Components/PrivacyPolicy/PrivacyPolicy';
 import Main from '../Main/Main';
 
 const router = createBrowserRouter([
@@ -98,6 +99,10 @@ const router = createBrowserRouter([
       {
         path: '/Contact-US',
         element: <ContactInner2 />,
+      },
+      {
+        path: '/Privacy-Policy',
+        element: <PrivacyPolicy />,
       }
     ],
   }
