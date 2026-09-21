@@ -1,4 +1,5 @@
 // import React from "react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -18,15 +19,14 @@ const AboutSection = () => {
           </div>
           <div>
             <p className=" mb-3 leading-relaxed text-[#0d47a1] font-bold text-1xl">
-              We are an interactive technology firm connecting the industry
-              most experienced professionals with our clients most challenging business and technical problems.
+              We are an interactive technology firm Connecting the industry's most experienced professionals with our clients' most challenging business and technical problems.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/Careers"
               className="underline text-[#0d47a1] font-semibold hover:text-red-400 transition-all"
             >
               Join us today!
-            </a>
+            </Link>
           </div>
         </div>
 

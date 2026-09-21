@@ -119,12 +119,12 @@ const MissionVisionSection = () => {
     },
     {
       number: '53',
-      label: 'Projects Delivered',
+      label: 'Projects Completed',
       icon: HiOutlineRocketLaunch,
     },
     {
       number: '02',
-      label: 'Awards & Achievements',
+      label: 'Awards Achieved',
       icon: HiOutlineSparkles,
     },
   ];
