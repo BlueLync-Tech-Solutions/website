@@ -446,7 +446,10 @@ const Appointment = () => {
 
                       <p className="mt-1 font-Nunito text-sm text-white/60">
                         4th Floor, Srinivasa Heights, 302, Kousalya Colony,
-                        Bachupally, Hyderabad, Telangana 500118
+                        Bachupally, Hyderabad, Telangana 500118 Business Hours:
+                        Mon - Fri (7 AM to 10 PM) <br />
+                        Contact:
+                        <a href="tel:+916304925404"> +91-63049 25404 </a>
                       </p>
                     </div>
 
@@ -780,7 +783,7 @@ const Appointment = () => {
                       htmlFor="terms"
                       className="cursor-pointer font-Nunito text-sm text-slate-400"
                     >
-                      I agree with the{" "}
+                      I agree with the Privacy Policy and{" "}
                       <button
                         type="button"
                         ref={termsTriggerRef}
