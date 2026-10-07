@@ -1,5 +1,6 @@
 // Single source of truth for the office location used across the site.
-export const OFFICE_ADDRESS = 'KPHB Colony, Kukatpally, Hyderabad, Telangana, India';
+export const OFFICE_ADDRESS =
+  "BlueLync Tech Solutions India Pvt Ltd, 4th Floor, Srinivasa Heights, 302, Kousalya Colony, Bachupally, Hyderabad, Telangana 500118";
 
 const encodedAddress = encodeURIComponent(OFFICE_ADDRESS);
 
